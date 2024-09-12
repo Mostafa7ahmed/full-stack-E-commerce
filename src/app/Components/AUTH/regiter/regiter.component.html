@@ -1,0 +1,110 @@
+<section class="Regiter">
+
+     <div class="layOut"></div>
+
+      <div class=" regiterForm">
+        
+            <h3>انشئ حساب الان</h3>
+            <p>ادخل بياناتك لتتمتع بنجربة تسوق مميزة</p>
+
+
+            <form (ngSubmit)="Regiter(regsiterform)"  [formGroup]="regsiterform">
+
+                <div class="form-group">
+                    <label for="name" class="mb-3">اسم المستخدم</label>
+                    <input type="text" class="form-control inps " formControlName="name" id="name" placeholder=" ادخل اسم المستخدم">
+                    <div *ngIf="regsiterform.get('name')?.errors && regsiterform.get('name')?.touched" class="text-danger mt-1">
+                        <span *ngIf="regsiterform.get('name')?.errors?.['required']" class="m-0">الاسم مطلوب</span>
+                        <span *ngIf="regsiterform.get('name')?.errors?.['minlength']" class="m-0">يجب أن يكون الاسم على الأقل 3 أحرف</span>
+                        <span *ngIf="regsiterform.get('name')?.errors?.['maxlength']" class="m-0">يجب أن يكون الاسم على الأكثر 40 حرفًا</span>
+                    </div>
+                      
+                </div>
+
+
+                <div class="form-group mt-3">
+                    <label for="email" class="mb-3"> البريد الالكتروني</label>
+                    <input type="email" class="form-control inps " id="email" formControlName="email" placeholder=" ادخل البريد الالكتروني ">
+                    <div *ngIf="regsiterform.get('email')?.errors && regsiterform.get('email')?.touched" class="text-danger mt-1">
+                        <span *ngIf="regsiterform.get('email')?.errors?.['required']" class="m-0">الايميل  مطلوب</span>
+                        <span *ngIf="regsiterform.get('email')?.errors?.['email']" class="m-0">الايميل غير صالح</span>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group  mt-3">
+                    <label for="number" class="mb-3" > الرقم الهاتف </label>
+                    <input type="text" class="form-control inps " id="number" formControlName="phone" placeholder=" ادخل الرقم الهاتف">
+
+                    <div *ngIf="regsiterform.get('phone')?.errors && regsiterform.get('phone')?.touched" class="text-danger mt-1">
+                        <span *ngIf="regsiterform.get('phone')?.errors?.['required']">الرقم الهاتف مطلوب</span>
+                        <span *ngIf="regsiterform.get('phone')?.errors?.['pattern']">الرجاء إدخال رقم هاتف صالح</span>
+                      </div>
+                </div>
+
+                <div class="form-group  mt-3 ">
+                    <label for="password" class="mb-3"> كلمة المرور </label>
+                    <div class="position-relative">
+                        <input [type]="passwordFieldType ? 'password' : 'text'" class="form-control inps "
+                            formControlName="password" id="password" placeholder=" ادخل كلمة المرور">
+    
+    
+                        <i (click)="togglePasswordVisibility()" role="button" class="bi position-absolute top-4 passicon"
+                            [class.bi-eye-slash-fill]="!passwordFieldType" [class.bi-eye-fill]="passwordFieldType"></i>
+                    </div>
+                    <div *ngIf="regsiterform.get('password')?.errors && regsiterform.get('password')?.touched"
+                        class="text-danger">
+                        <span *ngIf="regsiterform.get('password')?.errors?.['required']" class="mb-0">كلمة المرور مطلوبة</span>
+                        <span *ngIf="regsiterform.get('password')?.errors?.['pattern']" class="mb-0"> ( Ex Mostafa &#64;123
+                            )كلمة المرور ضعيفة</span>
+                    </div>
+    
+    
+    
+                </div>
+                <div class="form-group  mt-3">
+                    <label for="Repassword" class="mb-3" >  تاكيد كلمة المرور </label>
+                    <div class="position-relative">
+                        <input [type]="rePasswordFieldType ? 'password' : 'text'" class="form-control inps "
+                            formControlName="rePassword" id="rePassword" placeholder=" تاكيد  كلمة المرور">
+    
+    
+                        <i (click)="toggleRePasswordVisibility()" role="button" class="bi position-absolute top-4 passicon"
+                            [class.bi-eye-slash-fill]="!rePasswordFieldType" [class.bi-eye-fill]="rePasswordFieldType"></i>
+                    </div>
+                
+                    <div *ngIf="regsiterform.get('rePassword')?.errors && regsiterform.get('rePassword')?.touched"  class="text-danger mt-1 ">
+                        <span *ngIf="regsiterform.get('rePassword')?.errors?.['required']" class="m-0">تأكيد كلمة المرور مطلوب</span>
+                        <span *ngIf="regsiterform.hasError('mismatch') && regsiterform.get('rePassword')?.touched" class="m-0">كلمة المرور وتأكيد كلمة المرور غير متطابقين</span>
+                      </div>
+
+                  
+                </div>
+
+
+                <div class="formValied my-3 ">
+                    <div class="check ">
+                        <input type="checkbox" class="checkbox" value="" id="defaultCheck1">
+                        <label  for="defaultCheck1"> اوافق علي الشروط والاحكام </label>
+                    </div>
+                   
+                    <a [routerLink]="'/forgetPassword'">هل نسيت  كلمه المرور </a>
+                  </div>
+
+                  <button class="btnRegster btns" [disabled]="!regsiterform.valid || isloading" type="submit">
+                    <span *ngIf="!isloading">انشاء الحساب</span>
+                    <span *ngIf="isloading" class="spinner-border spinner-border-sm" role="status"
+                        aria-hidden="true"></span>
+                    <span *ngIf="isloading">جاري التحميل...</span>
+                </button>
+                  <button [routerLink]="'/'" class="btns btnSign">تسجيل دخول </button>
+
+
+
+            </form>
+
+      </div>
+    
+    
+</section>
