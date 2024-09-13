@@ -1,0 +1,40 @@
+.subnav {
+  background-color: #F9C335;
+  color:#000000B2 ;
+  padding: 10px 30px;
+  overflow: hidden; 
+  position: relative;
+}
+
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-content {
+  display: flex;
+
+  gap: 20px;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  transform: translateX(0);
+
+  animation: scroll 12s  infinite alternate  ;
+  
+  &:hover{
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(0%, 0, 0); }
+}
+
+@media  (max-width: 768px) {
+    .subnav{
+      padding: 10px;
+    }
+
+}

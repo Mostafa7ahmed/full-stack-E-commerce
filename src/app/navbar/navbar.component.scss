@@ -1,0 +1,122 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px ;
+    height: 100px;
+}
+.navbar .logo img{
+    height: 60px;
+}
+.navbar .links  {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.navbar .links  li a{
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.8s ease;
+    &:hover{
+        color: #F9C335;
+    }
+}
+.navbar .links  li a.active{
+    color: #F9C335;
+}
+
+.navbar .offerSocial{
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .offerSocial i{
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+    transition: color 0.8s ease;
+    &:hover{
+        color: #F9C335;
+    }
+}
+.menu{
+    padding: 5px 8px;
+    font-size: 24px !important;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    display: none;
+}
+.offcanvas{
+
+    width: 70%;
+    background-color: #F9C335;
+    position: fixed;
+    display: flex;  
+    flex-direction: column;
+
+    gap: 10px;
+
+    height: 100vh;
+
+    z-index: 555555;
+}
+.offcanvas .btn-close{
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    &:hover{
+        color: #000000;
+        transform: rotate(360deg);
+    }
+    
+}
+.offcanvas .routeLink {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 80px;
+    gap: 50px !important;
+    color: white;
+}
+.offcanvas .routeLink  li{
+    margin: 20px 0  !important;
+}
+
+.offcanvas .links  li a{
+    color: #fff;
+}
+.offcanvas .links  li a.active{
+    color: #F9C335;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 5px 20px;
+}
+
+@media  (max-width: 768px) {
+    
+    .navbar .links{
+        display: none;
+    }
+    .menu{
+        display: flex;
+      
+    }
+}
+
+@media  (max-width: 500px){
+
+    .navbar{
+        padding: 10px 10px ;
+    }
+
+    .navbar .offerSocial{
+        gap: 20px !important;
+    }
+    
+}
