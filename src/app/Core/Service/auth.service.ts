@@ -1,53 +1,58 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
-import { Observable, ObservedValueOf } from 'rxjs';
+import { BehaviorSubject, Observable, ObservedValueOf } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { } 
-  APiUrl: string = "https://ecommerce.routemisr.com/api/v1/auth/";
+  constructor(private _HttpClient: HttpClient, private _Router: Router) {
+    if (localStorage.getItem("userToken") != null) {
+      this.DecodeUser();
+    }
+   }  APiUrl: string = "https://ecommerce.routemisr.com/api/v1/auth/";
 
-  userInfo: any;
+   userInfo=new BehaviorSubject(null);
   
 
 //  Register
   Register(user: object):Observable<any>{
-    return this.http.post(this.APiUrl +"signup",user)
+    return this._HttpClient.post(this.APiUrl +"signup",user)
   }
   
   // Signin
   Signin(user: object):Observable<any>{
-    return this.http.post(this.APiUrl +"signin",user)
+    return this._HttpClient.post(this.APiUrl +"signin",user)
   }
+
 
   DecodeUser() {
     const encode = localStorage.getItem("userToken");
     if (encode != null) {
-      const decoded = jwtDecode(encode);
-      this.userInfo = decoded;
+      const decoded:any = jwtDecode(encode);
+      this.userInfo.next(decoded)
+
     }
       
   }
-
   // Forgot Password
   forgetPassword(forgetPasswordForm:any):Observable<any>{
-    return this.http.post(this.APiUrl+'forgotPasswords',forgetPasswordForm);
+    return this._HttpClient.post(this.APiUrl+'forgotPasswords',forgetPasswordForm);
   }
   
 
 
 
   verifyRestCode(verifyRestCode: any): Observable<any>{
-    return this.http.post(this.APiUrl+'verifyResetCode',verifyRestCode);
+    return this._HttpClient.post(this.APiUrl+'verifyResetCode',verifyRestCode);
 
   }
   
   resetPassword(resetPassword: any): Observable<any>{
-    return this.http.put("https://ecommerce.routemisr.com/api/v1/auth/resetPassword",resetPassword);
+    return this._HttpClient.put("https://ecommerce.routemisr.com/api/v1/auth/resetPassword",resetPassword);
 
   }
   

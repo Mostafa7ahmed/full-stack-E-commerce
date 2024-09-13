@@ -40,8 +40,6 @@ export class LoginComponent {
   Sigin(formInfo: FormGroup) {
  
     this.isloading=true;
-    const email = this.siginForm.get('email')?.value;
-    const password = this.siginForm.get('password')?.value;   
     
     this.authService.Signin(formInfo.value).subscribe((res) => {
       if (res.message === "success") {
@@ -49,7 +47,7 @@ export class LoginComponent {
         this._ToastService.showToast("success", "تم التسجيل الدخول بنجاح");
         localStorage.setItem("userToken", res.token);
         this.authService.DecodeUser();
-        this._Router.navigate(['/dashbords/dashbord']);
+        this._Router.navigate(['/home']);
       } 
     },
       (error) => {
