@@ -20,7 +20,7 @@
   position: relative;
   transform: translateX(0);
 
-  animation: scroll 12s  infinite alternate  ;
+  animation: scroll 12s linear  infinite alternate  ;
   
   &:hover{
     animation-play-state: paused;

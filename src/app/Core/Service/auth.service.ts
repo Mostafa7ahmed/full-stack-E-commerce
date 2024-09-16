@@ -8,14 +8,16 @@ import { BehaviorSubject, Observable, ObservedValueOf } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  userInfo = new BehaviorSubject(null);
 
   constructor(private _HttpClient: HttpClient, private _Router: Router) {
     if (localStorage.getItem("userToken") != null) {
       this.DecodeUser();
+      console.log(this.userInfo)
+
     }
    }  APiUrl: string = "https://ecommerce.routemisr.com/api/v1/auth/";
 
-   userInfo=new BehaviorSubject(null);
   
 
 //  Register

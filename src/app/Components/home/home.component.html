@@ -1,4 +1,173 @@
 <div class="container-fluid p-0 m-0">
-    <app-offer-nav></app-offer-nav>
-     <app-navbar></app-navbar>
+
+    <!-- carousel  -->
+    <div id="carouselExampleIndicators" class="carousel carousell slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner carousell">
+            <!-- First slide with background image -->
+            <div class="carousel-item active" data-bs-interval="2000"
+                style="background-image: url(assets/Image/Homebanner.png); background-size: cover; background-position: center; height: 78vh;">
+                <div class=" d-flex flex-column  cards  ">
+                    <span>جديد</span>
+                    <h1>اكتشف مجموعتنا <br>الجديدة</h1>
+                    <p>أكتشف افضل منتجاتنا الجديدة والراقية التي تناسب ذوقك.</p>
+
+                    <button class="btnbuys">
+                        اطلب الأن
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Second slide with background image -->
+            <div class="carousel-item active" data-bs-interval="2000"
+                style="background-image: url(assets/Image/Homebanner.png); background-size: cover; background-position: center; height: 78vh;">
+                <div class=" d-flex flex-column  cards  ">
+                    <span>جديد</span>
+                    <h1>اكتشف مجموعتنا <br>الجديدة</h1>
+                    <p>أكتشف افضل منتجاتنا الجديدة والراقية التي تناسب ذوقك.</p>
+
+                    <button class="btnbuys">
+                        اطلب الأن
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Third slide with background image -->
+            <div class="carousel-item active" data-bs-interval="2000"
+                style="background-image: url(assets/Image/Homebanner.png); background-size: cover; background-position: center; height: 78vh;">
+                <div class=" d-flex flex-column  cards  ">
+                    <span>جديد</span>
+                    <h1>اكتشف مجموعتنا <br>الجديدة</h1>
+                    <p>أكتشف افضل منتجاتنا الجديدة والراقية التي تناسب ذوقك.</p>
+
+                    <button class="btnbuys">
+                        اطلب الأن
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End carousel  -->
+    <!-- Catecoris -->
+    <div class="categories  d-flex flex-column  align-items-center text-center my-5 ">
+
+        <h2 class="fw-bolder">الفئات المميزه</h2>
+
+        <p class="fw-medium text-body-tertiary">نقدم فئات عديدة وخدمات مميزه في المجالات كثيره</p>
+        <div class="CardDepartMensts d-flex align-items-center gap-4 ">
+            <div class=" " *ngFor="let item of departments">
+                <div class="cardDaprt">
+                    <a [routerLink]="['/products' , item.RouteCategory]" routerLinkActive="router-link-active">
+                        <img src="{{item.image}}" alt="">
+                        <h5>{{item.nameDepart}}</h5>
+                        <p>{{item.numberofdepart}}</p>
+                    </a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <!-- End Catecoris -->
+
+    <!-- Start  Favorite -->
+     <div class="Favorite  text-center my-5">
+        <h2 class="fw-bolder"> شاهد افضل المنتجات</h2>
+    
+        <p class="fw-medium text-body-tertiary">تطلع الان علي افضل المنتجات العصرية </p>
+        <div class="sliderFav ">
+     
+            <div class="slied  position-relative">
+                <img src="assets/Image/favone.png" class="d-block " alt="...">
+
+                <button class="position-absolute btnFav">شراء</button>
+    
+            </div>
+            <div class="slied position-relative">
+                <img src="assets/Image/favtwo.png" class="d-block " alt="...">
+                <button class="position-absolute btnFav">شراء</button>
+
+    
+            </div>
+            <div class="slied position-relative">
+                <img src="assets/Image/favthree.png" class="d-block " alt="...">
+                <button class="position-absolute btnFav">شراء</button>
+
+    
+            </div>
+            <div class="slied position-relative">
+                <img src="assets/Image/favfour.png" class="d-block " alt="...">
+                <button class="position-absolute btnFav">شراء</button>
+
+    
+            </div>
+    
+        </div>
+    
+     </div>
+   
+    <!-- Products -->
+     <div class="Products  my-5 text-center  d-flex align-items-center flex-column">
+         
+         <h2 class="fw-bolder my-5">منتجاتنا  </h2>
+
+
+         <div class="product d-flex align-items-center ">
+
+            <div class="cardProdcut" *ngFor="let item of Prodcuts">
+                <img [src]="item.Image" class="card-img-top" alt="...">
+                <div class="cardBody">
+                    <h5 class="cardtitle">{{item.nameProduact}}</h5>
+                    <div class="disCount d-flex align-items-center justify-content-around">
+                        <p class="cardPrice" *ngIf="item.dec">
+                            {{ (item.price - (item.price * (item.dec / 100))) | number }} رس
+                        </p>
+                        <p class="beforeDec" *ngIf="item.dec">
+                            <del>{{ item.price }} رس </del>
+                        </p>
+                        <p class="cardPrice" *ngIf="!item.dec">
+                            {{ item.price }} رس
+                        </p>
+                    </div>
+                    <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                        <i 
+                            class="bi starColor" 
+                            [ngClass]="i < item.Rating ? 'bi-star-fill ' : 'bi-star-fill text-secondary mx-1'">
+                        </i>
+                    </ng-container>
+
+                   <span class="offter" *ngIf="item.dec">{{item.dec}} % </span>
+    
+
+               </div>
+
+               <button class="btnProdcut">أضف للسلة</button>
+         </div>
+
+
+
+        
+     </div>
+
+
+
 </div>
