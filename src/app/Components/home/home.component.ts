@@ -17,7 +17,8 @@ import { Prodcuts } from 'src/app/Core/Interface/prodcuts';
 export class HomeComponent implements OnInit {
   departments: Departmant[] = [];
   Prodcuts: Prodcuts[] = [];
-  reating: number =0;
+  isLoading: boolean = false;
+  
 
 
   constructor(private _DepartMentService: DepartMentService) { }
@@ -31,7 +32,6 @@ export class HomeComponent implements OnInit {
     this._DepartMentService.getDepartments().subscribe({ 
       next:(res) => {
         this.departments = res;
-        this.reating = res.dec;
 
       }
 
@@ -40,12 +40,22 @@ export class HomeComponent implements OnInit {
   }
 
   getProducts() {
+    this.isLoading = true;
+    
     this._DepartMentService.getProducts().subscribe({ 
       next:(res) => {
         this.Prodcuts = res.slice(0,12);
         console.log(this.Prodcuts);
+        this.isLoading = false;
       }
 
     });
+  }
+
+
+
+  AddCart(data: any) {
+    console.log(data)
+    
   }
 }

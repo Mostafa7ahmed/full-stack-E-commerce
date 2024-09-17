@@ -175,16 +175,17 @@
 
 .product{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     padding: 35px ;
-    gap: 30px;
+    gap: 40px;
 }
 
 .product .cardProdcut{
-    width: 300px;
+    width: 320px;
     border: 0.2px solid rgba(151, 151, 151, 0.311);
+    text-align: start;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -192,7 +193,7 @@
 }
 .product .cardProdcut img{
     height: 200px;
-    object-fit: fill;
+    object-fit: contain;
 
 }
 .cardBody{
@@ -229,17 +230,45 @@
 
 
 .btnProdcut{
-    padding: 15px 40px;
+    padding: 10px 30px;
     border: none;
     outline: none;
     border-radius: 10px;
+    font-size:  16px;
+  
     background: #B88E2F;
     color: #fff;
     font-weight: 600;
     transition: 2s ease-in-out background-color;
 }
+.btnEye{
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #B88E2F;
+    font-size:  16px;
+    border-radius: 10px;
 
-
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+.btnRoute{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size:  16px;
+ 
+   text-align: center;
+    background: transparent;
+    border: 2px solid #B88E2F;
+    color: #B88E2F;
+    font-weight: 600;
+}
+.btnRoute i{
+    font-weight: 600;
+}
 .starColor{
     font-size: 20px;
     color: #F9C335;
@@ -257,6 +286,41 @@
     right: 0px;
     border-radius: 4px;
     
+}
+
+.viewAll{
+    background: rgba(252, 248, 243, 1);
+    padding: 20px 20px;
+
+}
+.infoView h2{
+    font-size: 35px;
+    color: #000;
+    font-weight: 700;
+}
+.carouselviewAll{
+    width: 350px !important;
+    position: relative;
+}
+.indicatorView{
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: end;
+    padding: 0;
+    margin: 0;
+   
+
+}
+
+.ImageView img{
+
+    height: 400px;
+    object-fit: fill;
+    border-radius: 5px;
 }
 @media screen and (max-width : 700px) {
     .cards {

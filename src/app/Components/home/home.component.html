@@ -90,84 +90,134 @@
     <!-- End Catecoris -->
 
     <!-- Start  Favorite -->
-     <div class="Favorite  text-center my-5">
+    <div class="Favorite  text-center my-5">
         <h2 class="fw-bolder"> شاهد افضل المنتجات</h2>
-    
+
         <p class="fw-medium text-body-tertiary">تطلع الان علي افضل المنتجات العصرية </p>
         <div class="sliderFav ">
-     
+
             <div class="slied  position-relative">
                 <img src="assets/Image/favone.png" class="d-block " alt="...">
 
                 <button class="position-absolute btnFav">شراء</button>
-    
+
             </div>
             <div class="slied position-relative">
                 <img src="assets/Image/favtwo.png" class="d-block " alt="...">
                 <button class="position-absolute btnFav">شراء</button>
 
-    
+
             </div>
             <div class="slied position-relative">
                 <img src="assets/Image/favthree.png" class="d-block " alt="...">
                 <button class="position-absolute btnFav">شراء</button>
 
-    
+
             </div>
             <div class="slied position-relative">
                 <img src="assets/Image/favfour.png" class="d-block " alt="...">
                 <button class="position-absolute btnFav">شراء</button>
 
-    
+
             </div>
-    
+
         </div>
-    
-     </div>
-   
+
+    </div>
+
     <!-- Products -->
-     <div class="Products  my-5 text-center  d-flex align-items-center flex-column">
-         
-         <h2 class="fw-bolder my-5">منتجاتنا  </h2>
+    <div class="Products my-5 text-center d-flex align-items-center flex-column">
+        <h2 class="fw-bolder my-5">منتجاتنا</h2>
+        <div class="product d-flex align-items-center">
+            <!-- Skeleton Loader -->
+            <div *ngIf="isLoading  else loggedOut" class="skeleton-container">
+                <div class="skeleton-card" *ngFor="let _ of [1, 2, 3, 4, 5,6,7,8,9,10,11,12]"></div>
+            </div>
 
+            <!-- Actual Products -->
+            <ng-template #loggedOut>
 
-         <div class="product d-flex align-items-center ">
+                <div class="cardProdcut" *ngFor="let item of Prodcuts">
+                    <img [src]="item.Image" class="card-img-top" alt="...">
+                    <div class="cardBody">
+                        <h5 class="cardtitle">{{item.nameProduact}}</h5>
+                        <div class="disCount d-flex align-items-center justify-content-between">
+                            <p class="cardPrice" *ngIf="item.dec">
+                                {{ (item.price - (item.price * (item.dec / 100))) | number }} رس
+                            </p>
+                            <p class="beforeDec" *ngIf="item.dec">
+                                <del>{{ item.price }} رس </del>
+                            </p>
+                            <p class="cardPrice" *ngIf="!item.dec">
+                                {{ item.price }} رس
+                            </p>
+                        </div>
+                        <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                            <i class="bi starColor mx-2"
+                                [ngClass]="i < item.Rating ? 'bi-star-fill ' : 'bi-star-fill text-secondary mx-1'">
+                            </i>
+                        </ng-container>
 
-            <div class="cardProdcut" *ngFor="let item of Prodcuts">
-                <img [src]="item.Image" class="card-img-top" alt="...">
-                <div class="cardBody">
-                    <h5 class="cardtitle">{{item.nameProduact}}</h5>
-                    <div class="disCount d-flex align-items-center justify-content-around">
-                        <p class="cardPrice" *ngIf="item.dec">
-                            {{ (item.price - (item.price * (item.dec / 100))) | number }} رس
-                        </p>
-                        <p class="beforeDec" *ngIf="item.dec">
-                            <del>{{ item.price }} رس </del>
-                        </p>
-                        <p class="cardPrice" *ngIf="!item.dec">
-                            {{ item.price }} رس
-                        </p>
+                        <span class="offter" *ngIf="item.dec">{{item.dec}} % </span>
                     </div>
-                    <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
-                        <i 
-                            class="bi starColor" 
-                            [ngClass]="i < item.Rating ? 'bi-star-fill ' : 'bi-star-fill text-secondary mx-1'">
-                        </i>
-                    </ng-container>
+                    <div class="opreationBuy d-flex align-items-center justify-content-between">
+                        <a class="btnEye" [routerLink]="['/products', item.id]">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        <button class="btnProdcut" (click)="AddCart(item)">
+                            أضف للسلة <i class="bi bi-bag-fill me-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
 
-                   <span class="offter" *ngIf="item.dec">{{item.dec}} % </span>
-    
+        </div>
+        <a class="btnRoute" [routerLink]="'/products'">
+            عرض المزيد
+        </a>
+    </div>
+    <!--End Products -->
+ 
+    <!-- section View -->
 
+
+    <div class="viewAll p-5 d-flex align-items-center justify-content-between flex-wrap">
+        <div class="infoView mx-4">
+            <h2 class="fw-bolder"> +50 منتج في قمة الروعة والجمال </h2>
+            <p class="fw-medium text-body-tertiary">شاهد اروع المنتجات لدينا الان التي تناسب زوقك وتلبي احتياجاتك</p>
+            <button class="btnbuys">اكتشف المزيد</button>
+        </div>
+
+        <div class="gallary d-flex  gap-3">
+               <div class="d-flex flex-column">
+                <div id="carouselExampleControls" class="carousel carouselviewAll slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators indicatorView">
+                        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    
+                    <div class="carousel-inner  "  >
+                        <div class="carousel-item ImageView  active">
+                            <img src="assets/Image/session4.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item ImageView ">
+                            <img src="assets/Image/session5.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item ImageView">
+                            <img src="assets/Image/session6.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
                </div>
+            <img src="assets/Image/session3.png" class="rounded " alt="session3 Image" >
+        </div>
 
-               <button class="btnProdcut">أضف للسلة</button>
-         </div>
+  
+     
 
+    </div>
+ 
 
+     
 
-        
-     </div>
-
-
-
-</div>

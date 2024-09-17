@@ -1,16 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
-    font-family: "Tajawal", system-ui;
-    font-weight: 400;
-  }
-ul{
-    list-style:     none;
+  font-family: "Tajawal", system-ui;
+  font-weight: 400;
 }
-a{
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+ul {
+  list-style: none;
 }
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 .custom-toast-zindex {
-    z-index: 122229999 !important;  
+  z-index: 122229999 !important;
+}
+
+
+// skeleton 
+/* Skeleton Loader Styles */
+.skeleton-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.skeleton-card {
+  width: 320px;
+  height: 350px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  margin: 0 10px;
+  border-radius: 8px;
+  animation: shimmer 1.5s infinite;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -300px 0;
   }
+
+  100% {
+    background-position: 300px 0;
+  }
+}
+
+
+
+
+
+
+// skeleton 
