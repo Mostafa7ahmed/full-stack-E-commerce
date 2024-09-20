@@ -7,8 +7,7 @@ import { ForgetPasswordComponent } from './Components/AUTH/forget-password/forge
 import { AuthGuard } from './Core/Guards/auth.guard';
 import { ControalComponent } from './Components/controal/controal.component';
 import { ProductsComponent } from './Components/products/products.component';
-import { ProductpageComponent } from './productpage/productpage.component';
-
+import { ProductpageComponent } from './Components/productpage/productpage.component';
 const routes: Routes =[ 
   { path: "login", component: LoginComponent },
   { path: "register", component: RegiterComponent }, 

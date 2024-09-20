@@ -1,0 +1,17 @@
+<div id="carouselExampleIndicators" class="carousel carousell slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button *ngFor="let slide of slides; let i = index" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="i" [class.active]="slide.isActive" [attr.aria-current]="slide.isActive ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)">
+      </button>
+    </div>
+    
+    <div class="carousel-inner carousell">
+      <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="slide.isActive" data-bs-interval="2000" [ngStyle]="{'background-image': 'url(' + slide.background + ')', 'background-size': 'cover', 'background-position': 'center', 'height': '78vh'}">
+        <div class="d-flex flex-column cards">
+          <span>{{ slide.subtitle }}</span>
+          <h1>{{ slide.title }}</h1>
+          <p>{{ slide.description }}</p>
+          <button class="btnbuys">{{ slide.buttonText }}</button>
+        </div>
+      </div>
+    </div>
+  </div>

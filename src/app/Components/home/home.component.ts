@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OfferNavComponent } from '../offer-nav/offer-nav.component';
-import { NavbarComponent } from "../../navbar/navbar.component";
 import { DepartMentService } from 'src/app/Core/Service/depart-ment.service';
 import { Departmant } from 'src/app/Core/Interface/departmant';
 import { RouterLink } from '@angular/router';
 import { Prodcuts } from 'src/app/Core/Interface/prodcuts';
-
+import { NavbarComponent } from '../navbar/navbar.component';
+import { SliderComponent } from '../slider/slider.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NavbarComponent , RouterLink],
+  imports: [CommonModule, NavbarComponent , RouterLink , SliderComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
