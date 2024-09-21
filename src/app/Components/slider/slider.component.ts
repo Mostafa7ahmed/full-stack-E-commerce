@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent  implements OnInit{
-  slides :any =[];
+  slides :any[] =[];
   constructor(private _SliderDataService:SliderDataService){}
 
    ngOnInit(): void {
