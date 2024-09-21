@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OfferNavComponent } from '../offer-nav/offer-nav.component';
 import { DepartMentService } from 'src/app/Core/Service/depart-ment.service';
 import { Departmant } from 'src/app/Core/Interface/departmant';
 import { RouterLink } from '@angular/router';
@@ -11,7 +10,7 @@ import { CategoriesComponent } from '../categories/categories.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NavbarComponent , RouterLink , SliderComponent , CategoriesComponent],
+  imports: [CommonModule, NavbarComponent , RouterLink , SliderComponent ,CategoriesComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -26,6 +25,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
   }
+
 
   getProducts() {
     this.isLoading = true;
