@@ -1,0 +1,27 @@
+    <!-- Catecoris -->
+    <div class="categories  d-flex flex-column  align-items-center text-center my-5 ">
+
+        <h2 class="fw-bolder">الفئات المميزه</h2>
+
+        <p class="fw-medium text-body-tertiary">نقدم فئات عديدة وخدمات مميزه في المجالات كثيره</p>
+        <div class="CardDepartMensts d-flex align-items-center gap-5 ">
+            <div class=" " *ngFor="let item of departments">
+                <div class="cardDaprt">
+                    <a [routerLink]="['/products' , item.RouteCategory]" routerLinkActive="router-link-active">
+                        <img src="{{item.image}}" alt="">
+                        <h5>{{item.nameDepart}}</h5>
+                        <p>{{item.numberofdepart}}</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <!-- End Catecoris -->

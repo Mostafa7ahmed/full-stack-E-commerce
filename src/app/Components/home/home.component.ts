@@ -7,15 +7,15 @@ import { RouterLink } from '@angular/router';
 import { Prodcuts } from 'src/app/Core/Interface/prodcuts';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SliderComponent } from '../slider/slider.component';
+import { CategoriesComponent } from '../categories/categories.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NavbarComponent , RouterLink , SliderComponent],
+  imports: [CommonModule, NavbarComponent , RouterLink , SliderComponent , CategoriesComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  departments: Departmant[] = [];
   Prodcuts: Prodcuts[] = [];
   isLoading: boolean = false;
   
@@ -24,19 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(private _DepartMentService: DepartMentService) { }
 
   ngOnInit(): void {
-    this.getDepartments();
     this.getProducts();
-  }
-
-  getDepartments() {
-    this._DepartMentService.getDepartments().subscribe({ 
-      next:(res) => {
-        this.departments = res;
-
-      }
-
-    });
-
   }
 
   getProducts() {

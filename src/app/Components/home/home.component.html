@@ -2,37 +2,9 @@
 
     <!-- carousel  -->
      <app-slider></app-slider>
- 
     <!-- End carousel  -->
     <!-- Catecoris -->
-    <div class="categories  d-flex flex-column  align-items-center text-center my-5 ">
-
-        <h2 class="fw-bolder">الفئات المميزه</h2>
-
-        <p class="fw-medium text-body-tertiary">نقدم فئات عديدة وخدمات مميزه في المجالات كثيره</p>
-        <div class="CardDepartMensts d-flex align-items-center gap-4 ">
-            <div class=" " *ngFor="let item of departments">
-                <div class="cardDaprt">
-                    <a [routerLink]="['/products' , item.RouteCategory]" routerLinkActive="router-link-active">
-                        <img src="{{item.image}}" alt="">
-                        <h5>{{item.nameDepart}}</h5>
-                        <p>{{item.numberofdepart}}</p>
-                    </a>
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-
-
-    </div>
-
+    <app-categories></app-categories>
     <!-- End Catecoris -->
 
     <!-- Start  Favorite -->
@@ -61,7 +33,7 @@
 
             </div>
             <div class="slied position-relative">
-                <img src="assets/Image/favfour.png" class="d-block " alt="...">
+                <img src="assets/Image/favone.png" class="d-block " alt="...">
                 <button class="position-absolute btnFav">شراء</button>
 
 
@@ -156,7 +128,7 @@
                     </div>
                 </div>
                </div>
-            <img src="assets/Image/session3.png" class="rounded " alt="session3 Image" >
+            <img src="assets/Image/session3.png" class="rounded session3 " alt="session3 Image" >
         </div>
 
   

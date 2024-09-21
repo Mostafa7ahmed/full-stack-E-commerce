@@ -1,18 +1,7 @@
 .carousell{
     height: 78vh !important;
 }
-.carousel-indicators [data-bs-target]{
-    background-color: #a39f9f !important;
-    opacity: 1 !important;
-    width: 15px !important;
-    height: 15px !important;
-    border-radius: 50% !important;
-}
-.carousel-indicators .active {
-    background-color: #F9C335 !important;
-    opacity: 1 !important;
-    
-}
+
 
 .cards {
     background: #FFF3E399;
@@ -39,24 +28,7 @@
     margin: 5px 0 ;
     font-size: 18px;
 }
-.btnbuys{
-    padding: 15px 20px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    background: #B88E2F;
-    width: 40%;
-    color: #fff;
-    font-weight: 600;
-    margin-top: 20px;
-    transition: 2s ease-in-out background-color;
 
-    cursor: pointer;
-    &:hover{
-        background: #F9C335;
-    }
-
-}
 
 
 
