@@ -18,9 +18,9 @@ const routes: Routes =[
     canActivate: [AuthGuard],
     component:ControalComponent,
     children: [
-      { path: "home", component: HomeComponent },
-      { path: "products", component: ProductsComponent },
-      { path: 'products/:name', component: ProductpageComponent },
+      { path: "home", title:"Home" ,component: HomeComponent },
+      { path: "products",   title:"Products" ,component: ProductsComponent },
+      { path: 'products/:name', title:"Prodcut Details" , component: ProductpageComponent },
 
 
     ]
