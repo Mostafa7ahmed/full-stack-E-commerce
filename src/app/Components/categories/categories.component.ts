@@ -14,5 +14,6 @@ import { RouterLink } from '@angular/router';
 export class CategoriesComponent  {
   @Input() departments: Departmant[] = [];
  
+  @Input()   isLoadingDepart: boolean = false;
 
 }

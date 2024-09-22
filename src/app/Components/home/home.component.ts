@@ -9,18 +9,21 @@ import { SliderComponent } from '../slider/slider.component';
 import { CategoriesComponent } from '../categories/categories.component';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ProductsComponent } from "../products/products.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, RouterLink, SliderComponent, CategoriesComponent],
+  imports: [CommonModule, NavbarComponent, RouterLink, SliderComponent, CategoriesComponent, ProductsComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
   Prodcuts: Prodcuts[] = [];
-  isLoading: boolean = false;
+  isLoadingProduct: boolean = false;
+  isLoadingDepart: boolean = false;
   departmentHome: Departmant[] = [];
+
   private destroy$ = new Subject<void>();
 
   constructor(private _DepartMentService: DepartMentService) { }
@@ -30,34 +33,33 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.getDepartments();
   }
   getProducts() {
-    this.isLoading = true;
+    this.isLoadingProduct = true;
 
     this._DepartMentService.getProducts()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
           this.Prodcuts = res.slice(0, 12);
-          this.isLoading = false;
+          this.isLoadingProduct = false;
         }
       });
   }
 
   getDepartments() {
-    this.isLoading = true;
+    this.isLoadingDepart = true;
 
     this._DepartMentService.getDepartments()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
           this.departmentHome = res;
+          this.isLoadingDepart = false;
+
         }
       });
   }
 
-  AddCart(data: any) {
-    console.log(data);
-  }
-
+ 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();

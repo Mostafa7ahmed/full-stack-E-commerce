@@ -1,3 +1,4 @@
+import { GloblaserviceService } from './globlaservice.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,24 +11,25 @@ import { BehaviorSubject, Observable, ObservedValueOf } from 'rxjs';
 export class AuthService {
   userInfo = new BehaviorSubject(null);
 
-  constructor(private _HttpClient: HttpClient, private _Router: Router) {
+  constructor(private _HttpClient: HttpClient, private _Router: Router, private APiUrl:GloblaserviceService) {
     if (localStorage.getItem("userToken") != null) {
       this.DecodeUser();
       console.log(this.userInfo)
 
     }
-   }  APiUrl: string = "https://ecommerce.routemisr.com/api/v1/auth/";
+   }  
+   
 
   
 
 //  Register
   Register(user: object):Observable<any>{
-    return this._HttpClient.post(this.APiUrl +"signup",user)
+    return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute+"signup",user)
   }
   
   // Signin
   Signin(user: object):Observable<any>{
-    return this._HttpClient.post(this.APiUrl +"signin",user)
+    return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute +"signin",user)
   }
 
 
@@ -42,19 +44,19 @@ export class AuthService {
   }
   // Forgot Password
   forgetPassword(forgetPasswordForm:any):Observable<any>{
-    return this._HttpClient.post(this.APiUrl+'forgotPasswords',forgetPasswordForm);
+    return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute +'forgotPasswords',forgetPasswordForm);
   }
   
 
 
 
   verifyRestCode(verifyRestCode: any): Observable<any>{
-    return this._HttpClient.post(this.APiUrl+'verifyResetCode',verifyRestCode);
+    return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute+'verifyResetCode',verifyRestCode);
 
   }
   
   resetPassword(resetPassword: any): Observable<any>{
-    return this._HttpClient.put("https://ecommerce.routemisr.com/api/v1/auth/resetPassword",resetPassword);
+    return this._HttpClient.put(this.APiUrl.baseUrl + this.APiUrl.authRoute +'resetPassword',resetPassword);
 
   }
   

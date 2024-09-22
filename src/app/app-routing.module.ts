@@ -5,7 +5,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/AUTH/login/login.component';
 import { ForgetPasswordComponent } from './Components/AUTH/forget-password/forget-password.component';
 import { AuthGuard } from './Core/Guards/auth.guard';
-import { ControalComponent } from './Components/controal/controal.component';
+import { ControalComponent } from './Components/controllers/controal.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { ProductpageComponent } from './Components/productpage/productpage.component';
 const routes: Routes =[ 

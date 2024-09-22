@@ -1,14 +1,14 @@
 <div class="container-fluid  p-5 pb-2">
 
-    <div class="footer  row gap-3 d-flex    align-content-center justify-content-between  ">
-        <div class="col-md-4 ">
+    <div class="footer  row gap-lg-3 gap-sm-5 d-flex    align-content-center justify-content-between  ">
+        <div class="col-md-3 ">
 
             <img src="assets/Image/logo-Photoroom.png" alt="" class="imgFooter">
             <p class="mt-2  ">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
                 لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن
                 تولد مثل هذا النص</p>
         </div>
-        <div class="medalFooter col-md-4">
+        <div class="medalFooter col-md-3">
             <h4 class="fw-bolder">أقسام</h4>
             <ul *ngFor="let item of departments">
                 <li><a [routerLink]="['/products' , item.routePage]" >{{item.name}}</a></li>
@@ -16,7 +16,7 @@
             </ul>
         </div>
 
-        <div class="medalFooter col-md-4 ">
+        <div class="medalFooter col-md-3 ">
 
 
             <h4 class="fw-bolder">روابط</h4>
@@ -30,5 +30,5 @@
 
     <hr>
 
-    <h5 class="text-center mt-4">ستور© 2024جميع الحقوق محفوظة </h5>
+    <h5 class="text-center mt-4 copyright py-4">ستور© 2024جميع الحقوق محفوظة </h5>
 </div>

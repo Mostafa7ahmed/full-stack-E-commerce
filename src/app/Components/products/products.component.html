@@ -1,1 +1,52 @@
-<p>products works!</p>
+    <!-- Products -->
+    <div class="Products my-5 text-center d-flex align-items-center flex-column">
+        <h2 class="fw-bolder my-5">منتجاتنا</h2>
+        <div class="product d-flex align-items-center">
+            <!-- Skeleton Loader -->
+            <div *ngIf="isLoadingProduct  else Products" class="skeleton-container">
+                <div class="skeleton-card" *ngFor="let _ of [1, 2, 3, 4, 5,6,7,8,9,10,11,12]"></div>
+            </div>
+
+            <!-- Actual Products -->
+            <ng-template #Products>
+
+                <div class="cardProdcut" *ngFor="let item of Prodcuts">
+                    <img [src]="item.Image" class="card-img-top" [alt]="item.nameProduact" loading="lazy">
+                    <div class="cardBody">
+                        <h5 class="cardtitle">{{item.nameProduact}}</h5>
+                        <div class="disCount d-flex align-items-center justify-content-between">
+                            <p class="cardPrice" *ngIf="item.dec">
+                                {{ (item.price - (item.price * (item.dec / 100))) | number }} رس
+                            </p>
+                            <p class="beforeDec" *ngIf="item.dec">
+                                <del>{{ item.price }} رس </del>
+                            </p>
+                            <p class="cardPrice" *ngIf="!item.dec">
+                                {{ item.price }} رس
+                            </p>
+                        </div>
+                        <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                            <i class="bi starColor mx-2"
+                                [ngClass]="i < item.Rating ? 'bi-star-fill ' : 'bi-star-fill text-secondary mx-1'">
+                            </i>
+                        </ng-container>
+
+                        <span class="offter" *ngIf="item.dec">{{item.dec}} % </span>
+                    </div>
+                    <div class="opreationBuy d-flex align-items-center justify-content-between">
+                        <a class="btnEye" [routerLink]="['/products', item.id]">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        <button class="btnProdcut" (click)="AddCart(item)">
+                            أضف للسلة <i class="bi bi-bag-fill me-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+
+        </div>
+        <a class="btnRoute" [routerLink]="'/products'">
+            عرض المزيد
+        </a>
+    </div>
+    <!--End Products -->
