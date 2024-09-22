@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.getProducts();
     this.getDepartments();
   }
-
   getProducts() {
     this.isLoading = true;
 
@@ -38,13 +37,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (res) => {
           this.Prodcuts = res.slice(0, 12);
-          console.log(this.Prodcuts);
           this.isLoading = false;
         }
       });
   }
 
   getDepartments() {
+    this.isLoading = true;
+
     this._DepartMentService.getDepartments()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
