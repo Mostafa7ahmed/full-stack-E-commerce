@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel carousell slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <!-- Carousel Indicators -->
   <div class="carousel-indicators">
     <button *ngFor="let slide of slides; let i = index"
@@ -12,14 +12,14 @@
   </div>
 
   <!-- Carousel Items -->
-  <div class="carousel-inner carousell">
+  <div class="carousel-inner">
     <div *ngFor="let slide of slides; let i = index"
       class="carousel-item"
       [class.active]="slide.isActive"
       data-bs-interval="2000"
       [ngStyle]="{'background-image': 'url(' + slide.background + ')', 'background-size': 'cover', 'background-position': 'center', 'height': '78vh'}">
       
-      <div class="d-flex flex-column cards">
+      <div class="d-flex flex-column align-items-start justify-content-center cards">
         <span>{{ slide.subtitle }}</span>
         <h1>{{ slide.title }}</h1>
         <p>{{ slide.description }}</p>
@@ -27,4 +27,5 @@
       </div>
     </div>
   </div>
+
 </div>
