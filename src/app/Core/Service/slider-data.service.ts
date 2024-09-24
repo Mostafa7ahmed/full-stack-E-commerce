@@ -23,7 +23,7 @@ export class SliderDataService {
       isActive: false
     },
     {
-      background: 'assets/Image/Homebanner3.png',
+      background: 'assets/Image/Homebanner2.png',
       title: 'خصومات هائلة جدا',
       subtitle: 'خصومات',
       description: 'اغتنم الفرصة واحصل على خصومات تصل إلى 50٪ على منتجات مختارة.',
@@ -31,7 +31,7 @@ export class SliderDataService {
       isActive: false
     },
     {
-      background: 'assets/Image/Homebanner3.png',
+      background: 'assets/Image/Homebanner2.png',
       title: ' المنتجات بجودة عالية',
       subtitle: 'مميز',
       description: 'احصل على منتجات مميزة بجودة عالية وبأسعار تنافسية.',

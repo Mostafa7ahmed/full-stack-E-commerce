@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.getProducts();
     this.getDepartments();
   }
-  getProducts() {
+  getProducts(){
     this.isLoadingProduct = true;
 
     this._DepartMentService.getProducts()
@@ -49,7 +49,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.isLoadingDepart = true;
 
     this._DepartMentService.getDepartments()
-      .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
           this.departmentHome = res;

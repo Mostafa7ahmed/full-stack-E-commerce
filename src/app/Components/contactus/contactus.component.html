@@ -1,1 +1,192 @@
-<p>contactus works!</p>
+<div class="container-fluid p-0">
+  <app-banner
+    [backgroundImage]="bannerImage"
+    [TitlePage]="titlePage"
+  ></app-banner>
+
+  <div class="Cotactdata">
+    <h2>أبقي علي تواصل معنا</h2>
+    <p class="w-75">
+      لمزيد من المعلومات حول منتجاتنا وخدماتنا لا تتردد في ترك لنا رسالة بالبريد
+      الإلكتروني موظفونا متواجدون دائمًا لمساعدتك
+    </p>
+  </div>
+  <div class="formCotact d-flex justify-content-center align-content-center">
+    <div
+      class="formdata d-flex justify-content-between align-content-start  gap-5 w-75"
+    >
+      <form
+        class="RightForms w-50"
+        (ngSubmit)="AddMessage(addmessage)"
+        [formGroup]="addmessage"
+      >
+        <!-- Name Field -->
+        <div class="mb-3">
+          <label for="name" class="form-label">الاسم</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="ادخل الاسم"
+            formControlName="nameUser"
+            [ngClass]="{
+              'is-invalid':
+                addmessage.get('nameUser')?.invalid &&
+                addmessage.get('nameUser')?.touched
+            }"
+          />
+          <!-- Error message for name -->
+          <div
+            *ngIf="
+              addmessage.get('nameUser')?.invalid &&
+              addmessage.get('nameUser')?.touched
+            "
+            class="text-danger"
+          >
+            <small *ngIf="addmessage.get('nameUser')?.errors?.['required']"
+              >الاسم مطلوب</small
+            >
+            <small *ngIf="addmessage.get('nameUser')?.errors?.['minlength']"
+              >يجب أن يحتوي الاسم على 3 أحرف على الأقل</small
+            >
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-3">
+          <label for="email" class="form-label">البريد الالكتروني</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="ادخل البريد الالكتروني"
+            formControlName="Email"
+            [ngClass]="{
+              'is-invalid':
+                addmessage.get('Email')?.invalid &&
+                addmessage.get('Email')?.touched
+            }"
+          />
+          <!-- Error message for email -->
+          <div
+            *ngIf="
+              addmessage.get('Email')?.invalid &&
+              addmessage.get('Email')?.touched
+            "
+            class="text-danger"
+          >
+            <small *ngIf="addmessage.get('Email')?.errors?.['required']"
+              >البريد الالكتروني مطلوب</small
+            >
+            <small *ngIf="addmessage.get('Email')?.errors?.['email']"
+              >الرجاء إدخال بريد إلكتروني صالح</small
+            >
+          </div>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">رقم الهاتف</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            placeholder="ادخل رقم الهاتف"
+            formControlName="phone"
+            [ngClass]="{
+              'is-invalid':
+                addmessage.get('phone')?.invalid &&
+                addmessage.get('phone')?.touched
+            }"
+          />
+          <!-- Error message for phone -->
+          <div
+            *ngIf="
+              addmessage.get('phone')?.invalid &&
+              addmessage.get('phone')?.touched
+            "
+            class="text-danger"
+          >
+            <small *ngIf="addmessage.get('phone')?.errors?.['required']"
+              >رقم الهاتف مطلوب</small
+            >
+            <small *ngIf="addmessage.get('phone')?.errors?.['pattern']"
+              >الرجاء إدخال رقم هاتف صالح</small
+            >
+          </div>
+        </div>
+        <!-- Message Field -->
+        <div class="mb-3">
+          <label for="message" class="form-label">الرسالة</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="3"
+            formControlName="message"
+            [ngClass]="{
+              'is-invalid':
+                addmessage.get('message')?.invalid &&
+                addmessage.get('message')?.touched
+            }"
+          ></textarea>
+          <!-- Error message for message -->
+          <div
+            *ngIf="
+              addmessage.get('message')?.invalid &&
+              addmessage.get('message')?.touched
+            "
+            class="text-danger"
+          >
+            <small *ngIf="addmessage.get('message')?.errors?.['required']"
+              >الرسالة مطلوبة</small
+            >
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          class="btn btnconatcts px-5 text-light text-center py-2"
+          [disabled]="addmessage.invalid"
+        >
+          ارسال
+        </button>
+      </form>
+
+      <div class="ContactSocial d-flex align-content-center flex-column justify-content-center gap-3 w-50 mx-5">
+        <div class="links">
+          <div class="iconSocial">
+            <i class="bi bi-phone"></i>
+          </div>
+
+          <div class="infosocial">
+            <h4>رقم التليفون</h4>
+            <p>+966 126982183</p>
+          </div>
+        </div>
+
+        <div class="links">
+          <div class="iconSocial">
+            <i class="bi bi-envelope-at"></i>
+          </div>
+
+          <div class="infosocial">
+            <h4> البريد الالكتروني</h4>
+            <p>info&#64;store.com</p>
+          </div>
+        </div>
+
+        <div class="links">
+          <div class="iconSocial">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+
+          <div class="infosocial">
+            <h4>الموقع</h4>
+            <p>السعودية - جدة شارع الامير 
+                سلطان / مركز زهران التجاري</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
