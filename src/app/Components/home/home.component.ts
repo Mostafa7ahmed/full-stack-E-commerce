@@ -49,6 +49,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.isLoadingDepart = true;
 
     this._DepartMentService.getDepartments()
+      .pipe(takeUntil(this.destroy$))
+
       .subscribe({
         next: (res) => {
           this.departmentHome = res;

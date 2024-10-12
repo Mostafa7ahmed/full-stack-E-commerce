@@ -46,7 +46,6 @@ export class RegiterComponent  {
 
   Regiter(formInfo: FormGroup) {
      this.isloading = true;
-    this.regsiterform.markAllAsTouched();
     this.authService.Register(formInfo.value).subscribe((res) => {
       if (res.message === "success") {
         this.isloading = false;

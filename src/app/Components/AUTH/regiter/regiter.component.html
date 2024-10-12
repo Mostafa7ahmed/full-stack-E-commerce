@@ -76,7 +76,10 @@
                 
                     <div *ngIf="regsiterform.get('rePassword')?.errors && regsiterform.get('rePassword')?.touched"  class="text-danger mt-1 ">
                         <span *ngIf="regsiterform.get('rePassword')?.errors?.['required']" class="m-0">تأكيد كلمة المرور مطلوب</span>
-                        <span *ngIf="regsiterform.hasError('mismatch') && regsiterform.get('rePassword')?.touched" class="m-0">كلمة المرور وتأكيد كلمة المرور غير متطابقين</span>
+                        <span *ngIf="regsiterform.get('password')?.errors?.['required']" class="mb-0">كلمة المرور مطلوبة</span>
+                        <span *ngIf="regsiterform.get('password')?.errors?.['pattern']" class="mb-0"> ( Ex Mostafa &#64;123
+                            )كلمة المرور ضعيفة</span>
+                        <span *ngIf="regsiterform.hasError('mismatch') " class="m-0">كلمة المرور وتأكيد كلمة المرور غير متطابقين</span>
                       </div>
 
                   
@@ -98,7 +101,7 @@
                         aria-hidden="true"></span>
                     <span *ngIf="isloading">جاري التحميل...</span>
                 </button>
-                  <button [routerLink]="'/'" class="btns btnSign">تسجيل دخول </button>
+                  <a routerLink="/" class="btns btnSign w-100 d-block text-center fw-bolder">تسجيل دخول </a>
 
 
 
