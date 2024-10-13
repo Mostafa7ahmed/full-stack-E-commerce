@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   isLoadingProduct: boolean = false;
   isLoadingDepart: boolean = false;
   departmentHome: Departmant[] = [];
+  IsRoute: boolean = true;
+
 
   private destroy$ = new Subject<void>();
 

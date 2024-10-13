@@ -17,6 +17,7 @@ const routes: Routes =[
       { path: 'products/:name', title:"Prodcut Details" ,  loadComponent:()=>import("./Components/produts-detailes/produts-detailes.component").then(c =>c.ProdutsDetailesComponent) },
       { path: "fromUs",   title:"From US" , loadComponent:()=>import("./Components/fromus/fromus.component").then(c =>c.FromusComponent) },
       { path: "contactUS",   title:"Contact US" , loadComponent:()=>import("./Components/contactus/contactus.component").then(c =>c.ContactusComponent) },
+      { path: "cart",   title:"Cart" , loadComponent:()=>import("./Components/cart/cart.component").then(c =>c.CartComponent) },
 
       { path: '**',   title:"Not Found"  ,loadComponent:()=>import("./Components/notfound/notfound.component").then(c =>c.NotfoundComponent)} 
     ]

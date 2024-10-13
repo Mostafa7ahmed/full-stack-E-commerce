@@ -20,4 +20,9 @@ export class DepartMentService {
   getProducts(): Observable<any>{
     return this._http.get(`${this.APIUrl.API_Prodcuts}Ecommerce/Products`);
   }
+
+  
+  getProductByID(Id:string): Observable<any>{
+    return this._http.get(`${this.APIUrl.API_Prodcuts}Ecommerce/Products/${Id}`);
+  }
 }

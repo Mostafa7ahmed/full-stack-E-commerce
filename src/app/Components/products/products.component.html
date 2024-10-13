@@ -37,16 +37,19 @@
                         <a class="btnEye" [routerLink]="['/products', item.id]">
                             <i class="bi bi-eye"></i>
                         </a>
-                        <button class="btnProdcut" (click)="AddCart(item)">
-                            أضف للسلة <i class="bi bi-bag-fill me-2"></i>
+                        <button class="btnProdcut" (click)="handleCartAction(item)">
+                            {{ isProductInCart(item.id) ? 'اذهب للسلة' : 'أضف للسلة' }} 
+                            <i [class]="isProductInCart(item.id) ? 'bi bi-cart' : 'bi bi-bag-fill me-2'"></i>
                         </button>
                     </div>
                 </div>
             </ng-template>
 
         </div>
-        <a class="btnRoute" [routerLink]="'/products'">
+        <a *ngIf="IsRoute" class="btnRoute" [routerLink]="'/products'">
             عرض المزيد
         </a>
     </div>
     <!--End Products -->
+
+    

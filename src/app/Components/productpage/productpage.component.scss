@@ -1,0 +1,242 @@
+.allopreationPaga {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    gap: 20px;
+  }
+  .pagination-controls .BtnPagination {
+    border: none;
+    background-color: #b88e2f;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+  
+  .pagination-controls .BtnPagination:disabled {
+    background-color: #b88f2f6e;
+  }
+  .NumpageActive {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #b88e2f;
+    color: #fceac0;
+    transition: 1s all ease-in-out;
+    cursor: pointer;
+  }
+  .NumpageActive:hover {
+    background-color: #cd9e31;
+  }
+  
+  .NumpageNotActive {
+    background: #b88e2f61;
+    cursor: pointer;
+  }
+  .limit-selection {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #b88e2f;
+    color: #fff;
+  }
+  .limit-selection select {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #fff;
+  
+    outline: none;
+    background-color: #b88f2fa4;
+    border: 1px solid #fff;
+  }
+  
+  /* dashboard.component.scss */
+  
+  .loading-spinner {
+    text-align: center;
+  }
+  
+  .loading-spinner p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Optionally, you can use an animated spinner */
+  .loading-spinner::before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+
+  
+
+.product{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 35px ;
+    gap: 40px;
+}
+
+.product .cardProdcut{
+    width: 320px;
+    border: 0.2px solid rgba(151, 151, 151, 0.311);
+    text-align: start;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    padding: 30px 20px;
+}
+.product .cardProdcut img{
+    height: 200px;
+    object-fit: contain;
+
+}
+.cardBody{
+   margin: 20px 0 ;
+}
+
+.cardBody h5{
+    color: #000;
+    font-weight: 700;
+    margin: 10px 0 ;
+    font-size: 24px;
+
+
+}
+
+.cardBody .disCount p{
+    font-family: Tajawal;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.6px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+
+
+}
+.cardBody .disCount .beforeDec{
+    font-family: Tajawal;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.6px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.358);
+}
+
+
+.btnProdcut{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size:  16px;
+  
+    background: #B88E2F;
+    color: #fff;
+    font-weight: 600;
+    transition: 2s ease-in-out background-color;
+}
+.btnEye{
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #B88E2F;
+    font-size:  16px;
+    border-radius: 10px;
+
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+.btnRoute{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size:  16px;
+ 
+   text-align: center;
+    background: transparent;
+    border: 2px solid #B88E2F;
+    color: #B88E2F;
+    font-weight: 600;
+}
+.btnRoute i{
+    font-weight: 600;
+}
+.starColor{
+    font-size: 20px;
+    color: #F9C335;
+    
+
+}
+
+.offter{
+    font-size: 18px;
+    color: #fff;
+    background: rgba(255, 9, 230, 0.6);
+    padding: 7px 20px;
+    position: absolute;
+    top: 0px ;
+    right: 0px;
+    border-radius: 4px;
+    
+}
+
+select {
+  appearance: none;
+  border: none;
+  padding: 10px 30px !important;
+  margin: 0;
+  width: 200px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+  border-radius: 10px;
+  border: 0.5px solid #9F9F9F;
+}
+.custom-select {
+  position: relative; /* Needed for positioning the arrow */
+}
+
+
+
+/* Arrow Down Styles */
+.arrow-down {
+  position: absolute;
+  left: 10px; /* Position the arrow */
+  top: calc(50% - 10px); /* Center the arrow vertically */
+
+
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+@media screen and (max-width : 400px) {
+ 
+
+
+    .product{
+        padding: 5px;
+        margin-bottom: 30px;
+    }
+
+
+
+}

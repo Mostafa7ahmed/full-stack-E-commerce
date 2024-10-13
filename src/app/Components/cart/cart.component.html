@@ -1,0 +1,34 @@
+<div *ngIf="cartItems.length; else emptyCart">
+    <h2>عربة التسوق</h2>
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <!-- Product Image -->
+      <img [src]="item.Image" alt="{{ item.name }}" class="product-image m-3">
+  
+      <!-- Product Details -->
+      <div class="product-details">
+        <h4>{{ item.name }}</h4>
+        <p>السعر: {{ item.price }} $</p>
+        <p>الكمية: {{ item.quantity }}</p>
+      </div>
+  
+      <!-- Buttons to Add More and Remove Item -->
+      <div class="product-actions">
+        <button (click)="addSameProduct(item.id)" class="btn-add">أضف المزيد</button>
+        <button (click)="removeItem(item.id)" class="btn-remove">إزالة</button>
+        <button (click)="removeSameProduct(item.id)" class="btn-add">أضف المزيد</button>
+
+      </div>
+    </div>
+  
+    <!-- Total Price Section -->
+    <h3>المجموع الكلي: {{ totalPrice }} $</h3>
+  
+    <!-- Buttons for clearing cart and continuing shopping -->
+    <button (click)="clearCart()" class="btn-clear">إفراغ السلة</button>
+    <button (click)="continueShopping()" class="btn-continue">مواصلة التسوق</button>
+  </div>
+  
+  <ng-template #emptyCart>
+    <p>عربة التسوق فارغة</p>
+  </ng-template>
+  
