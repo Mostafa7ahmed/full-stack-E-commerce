@@ -1,1 +1,59 @@
-<p>productdepartment works!</p>
+<app-banner [backgroundImage]="bannerImage" [TitlePage]="titlePage"></app-banner>
+
+<div class="" *ngIf="length ; else emptyDapart">
+
+    <app-products [Prodcuts]="paginatedProducts"  [IsRoute]="false" [isLoadingProduct]="loading"></app-products>
+
+
+    
+
+<div *ngIf="!loading && paginatedProducts.length > 0" class="allopreationPaga d-flex align-content-center justify-content-center">
+    <div class="pagination-controls">
+      <button
+        class="BtnPagination"
+        (click)="goToPreviousPage()"
+        [disabled]="currentPage === 1"
+      >
+        السابق
+      </button>
+      <div class="page-info">
+        <span class="current-page NumpageActive">{{ currentPage }}</span>
+        <span
+          class="current-page NumpageActive NumpageNotActive"
+          *ngIf="currentPage < numberOfPages()"
+          (click)="goToPage(currentPage + 1)"
+        >
+          {{ currentPage + 1 }}
+        </span>
+        <span
+          class="current-page NumpageActive NumpageNotActive"
+          *ngIf="currentPage < numberOfPages() - 1"
+          (click)="goToPage(currentPage + 2)"
+        >
+          {{ currentPage + 2 }}
+        </span>
+      </div>
+      <button
+        class="BtnPagination"
+        (click)="goToNextPage()"
+        [disabled]="currentPage === numberOfPages()"
+      >
+        التالي
+      </button>
+    </div>
+
+ 
+  </div>
+    
+</div>
+
+
+<ng-template #emptyDapart>
+
+    <div class="cart d-flex align-content-center  justify-content-center my-4 ">
+      <img src="../../../assets/Image/cartempety.png" alt="">
+
+    </div>
+    <h3 class="text-center mt-5 fw-bolder">لا يوجد مشتريات</h3>
+
+ </ng-template>

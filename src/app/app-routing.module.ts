@@ -14,7 +14,9 @@ const routes: Routes =[
     children: [
       { path: "home", title:"Home" , loadComponent:()=>import("./Components/home/home.component").then(c =>c.HomeComponent) },
       { path: "products",   title:"Products" , loadComponent:()=>import("./Components/productpage/productpage.component").then(c =>c.ProductpageComponent) },
-      { path: 'products/:name', title:"Prodcut Details" ,  loadComponent:()=>import("./Components/produts-detailes/produts-detailes.component").then(c =>c.ProdutsDetailesComponent) },
+      { path: 'products/:id', title:"Prodcut Details" ,  loadComponent:()=>import("./Components/produts-detailes/produts-detailes.component").then(c =>c.ProdutsDetailesComponent) },
+      { path: 'department/:name', title:"Prodcut DepartMenet" ,  loadComponent:()=>import("./Components/productdepartment/productdepartment.component").then(c =>c.ProductdepartmentComponent) },
+
       { path: "fromUs",   title:"From US" , loadComponent:()=>import("./Components/fromus/fromus.component").then(c =>c.FromusComponent) },
       { path: "contactUS",   title:"Contact US" , loadComponent:()=>import("./Components/contactus/contactus.component").then(c =>c.ContactusComponent) },
       { path: "cart",   title:"Cart" , loadComponent:()=>import("./Components/cart/cart.component").then(c =>c.CartComponent) },

@@ -31,7 +31,7 @@ export class ProdutsDetailesComponent implements OnInit {
   private _DepartMentService: DepartMentService
   
   ) {
-    this.productId = this._Route.snapshot.paramMap.get('name')!;
+    this.productId = this._Route.snapshot.paramMap.get('id')!;
   }
 
 

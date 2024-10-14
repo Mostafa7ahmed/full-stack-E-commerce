@@ -13,7 +13,7 @@
 
                 <div class=" " *ngFor="let item of departments">
                     <div class="cardDaprt">
-                        <a [routerLink]="['/products' , item.RouteCategory]" routerLinkActive="router-link-active">
+                        <a [routerLink]="['/department' , item.RouteCategory]" routerLinkActive="router-link-active">
                             <img [src]="item.image" [alt]="item.nameDepart" loading="lazy">
                             <h5>{{item.nameDepart}}</h5>
                             <p>{{item.numberofdepart}}</p>

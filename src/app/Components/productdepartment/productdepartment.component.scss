@@ -1,0 +1,43 @@
+.allopreationPaga {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    gap: 20px;
+  }
+  .pagination-controls .BtnPagination {
+    border: none;
+    background-color: #b88e2f;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+  
+  .pagination-controls .BtnPagination:disabled {
+    background-color: #b88f2f6e;
+  }
+  .NumpageActive {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #b88e2f;
+    color: #fceac0;
+    transition: 1s all ease-in-out;
+    cursor: pointer;
+  }
+  .NumpageActive:hover {
+    background-color: #cd9e31;
+  }
+  
+  .NumpageNotActive {
+    background: #b88e2f61;
+    cursor: pointer;
+  }
+  
