@@ -1,0 +1,156 @@
+.imageProduts {
+  width: 400px;
+  padding: 20px;
+  background: #f9f1e7;
+  border-radius: 20;
+
+  gap: 0px;
+  border-radius: 10px;
+  opacity: 0px;
+}
+
+.smallIamges img {
+  width: 100px !important;
+  padding: 20px;
+  background: #f9f1e7;
+  border-radius: 10px;
+}
+
+.starColor {
+  font-size: 17px;
+  color: #f9c335;
+}
+
+.labelsize {
+  background-color: #b88f2f6e;
+  color: #fff;
+  padding: 10px 12px !important;
+  cursor: pointer;
+  transition: 1s ease-in-out background-color;
+
+}
+.labelsize:hover {
+    background-color: #b88e2f;
+    transition: 1s ease-in-out background-color;
+
+
+  }
+
+.labelsize.active {
+  background-color: #b88e2f;
+}
+
+.btnProdcut {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 16px;
+
+  background: #b88e2f;
+  color: #fff;
+  font-weight: 600;
+  transition: 2s ease-in-out background-color;
+}
+.line {
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #b88f2fb2;
+  margin-top: 40px;
+}
+.loader {
+  --c: no-repeat linear-gradient(#F9C335 0 0);
+  background: var(--c), var(--c), var(--c), var(--c), var(--c), var(--c),
+    var(--c), var(--c), var(--c);
+  background-size: 26px 26px;
+  animation: l32-1 1s infinite, l32-2 1s infinite;
+}
+.description{
+    background-color: #f9f1e7;
+    border-radius: 10px;
+
+    padding: 20px 0;
+}
+.description p {
+  width: 70%;
+}
+
+@keyframes l32-1 {
+  0%,
+  100% {
+    width: 100px;
+    height: 100px;
+  }
+
+  35%,
+  65% {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes l32-2 {
+  0%,
+  40% {
+    background-position: 0 0, 0 50%, 0 100%, 50% 100%, 100% 100%, 100% 50%,
+      100% 0, 50% 0, 50% 50%;
+  }
+
+  60%,
+  100% {
+    background-position: 0 50%, 0 100%, 50% 100%, 100% 100%, 100% 50%, 100% 0,
+      50% 0, 0 0, 50% 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .detailes {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .detailes .infoDetailes p {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .imageProduts {
+    width: 100%;
+  }
+
+  .smallIamges img {
+    width: 70px !important;
+    padding: 10px;
+
+    gap: 10px !important;
+  }
+  .detailes .infoDetailes p {
+    width: 100% !important;
+  }
+
+  .detailes .infoDetailes p,  .description p  {
+    width: 100% !important;
+  }
+
+  
+  .line {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .imageProduts {
+    width: 100%;
+  }
+
+  .smallIamges img {
+    width: 50px !important;
+    padding: 10px;
+
+    gap: 10px !important;
+  }
+}

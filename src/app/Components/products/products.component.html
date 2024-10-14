@@ -1,6 +1,5 @@
     <!-- Products -->
     <div class="Products my-5 text-center d-flex align-items-center flex-column">
-        <h2 class="fw-bolder my-5">منتجاتنا</h2>
         <div class="product d-flex align-items-center">
             <!-- Skeleton Loader -->
             <div *ngIf="isLoadingProduct  else Products" class="skeleton-container">
@@ -16,13 +15,13 @@
                         <h5 class="cardtitle">{{item.nameProduact}}</h5>
                         <div class="disCount d-flex align-items-center justify-content-between">
                             <p class="cardPrice" *ngIf="item.dec">
-                                {{ (item.price - (item.price * (item.dec / 100))) | number }} رس
+                                {{ (item.price - (item.price * (item.dec / 100))) | dollarToRiyal }} 
                             </p>
                             <p class="beforeDec" *ngIf="item.dec">
-                                <del>{{ item.price }} رس </del>
+                                <del>{{ item.price | dollarToRiyal }}  </del>
                             </p>
                             <p class="cardPrice" *ngIf="!item.dec">
-                                {{ item.price }} رس
+                                {{ item.price | dollarToRiyal }}
                             </p>
                         </div>
                         <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">

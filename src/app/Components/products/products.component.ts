@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { Prodcuts } from 'src/app/Core/Interface/prodcuts';
+import { DollarToRiyalPipe } from 'src/app/Core/Pipes/dollar-to-riyal.pipe';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule , RouterLink],
+  imports: [CommonModule , RouterLink , DollarToRiyalPipe],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
@@ -19,7 +20,6 @@ export class ProductsComponent {
 
 
 
- cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
  addedProducts: Set<number> = new Set();
 
@@ -44,7 +44,6 @@ export class ProductsComponent {
  }
  
  navigateToCart(): void {
-   // Implement navigation to the cart page
    this._Router  .navigate(['/cart']);
  }
 

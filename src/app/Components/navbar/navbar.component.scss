@@ -22,9 +22,12 @@
         color: #F9C335;
     }
 }
+
 .navbar .links  li a.active{
     color: #F9C335;
+
 }
+
 
 .navbar .offerSocial{
     display: flex;
@@ -121,4 +124,11 @@
         gap: 20px !important;
     }
     
+}
+.navbar .offerSocial a.active i{
+    color: #F9C335;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 7px 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
