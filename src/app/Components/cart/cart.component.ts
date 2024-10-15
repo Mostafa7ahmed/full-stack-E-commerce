@@ -75,7 +75,8 @@ export class CartComponent {
   }
 
   continueShopping(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/payment']);
+
   }
 
   updateLocalStorage(): void {

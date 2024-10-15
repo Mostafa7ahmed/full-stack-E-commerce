@@ -16,10 +16,10 @@ const routes: Routes =[
       { path: "products",   title:"Products" , loadComponent:()=>import("./Components/productpage/productpage.component").then(c =>c.ProductpageComponent) },
       { path: 'products/:id', title:"Prodcut Details" ,  loadComponent:()=>import("./Components/produts-detailes/produts-detailes.component").then(c =>c.ProdutsDetailesComponent) },
       { path: 'department/:name', title:"Prodcut DepartMenet" ,  loadComponent:()=>import("./Components/productdepartment/productdepartment.component").then(c =>c.ProductdepartmentComponent) },
-
       { path: "fromUs",   title:"From US" , loadComponent:()=>import("./Components/fromus/fromus.component").then(c =>c.FromusComponent) },
       { path: "contactUS",   title:"Contact US" , loadComponent:()=>import("./Components/contactus/contactus.component").then(c =>c.ContactusComponent) },
       { path: "cart",   title:"Cart" , loadComponent:()=>import("./Components/cart/cart.component").then(c =>c.CartComponent) },
+      { path: "payment",   title:"Payment" , loadComponent:()=>import("./Components/payment/payment.component").then(c =>c.PaymentComponent) },
 
       { path: '**',   title:"Not Found"  ,loadComponent:()=>import("./Components/notfound/notfound.component").then(c =>c.NotfoundComponent)} 
     ]
