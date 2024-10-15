@@ -1,65 +1,103 @@
-.cart-item {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+.produtImage {
+  width: 100px;
+  height: 70px;
+  background-color: #fff3e3e5;
+  border-radius: 8px;
+  padding: 10px;
+}
+.product-image {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+
+.table > :not(caption) > * > * {
+  padding: 1.5rem 1.5rem;
+  box-shadow: none;
+  border: none;
+}
+
+table {
+  width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+thead tr {
+  border-radius: 10px;
+}
+.table > tbody {
+  vertical-align: middle;
+}
+.scrollTable {
+  width: 800px;
+  overflow-x: auto;
+}
+thead th {
+  background: #fff3e3e5;
+  padding: 20px 30px;
+}
+.btns {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: #fff3e3e5;
+}
+
+.buy {
+  background-color: #fff3e3e5;
+  padding: 30px 20px;
+  height: fit-content;
+  width: 450px;
+}
+.buyBtn {
+  padding: 10px 50px;
+  text-align: center;
+
+  background-color: transparent;
+  border: 2px solid #b88e2f;
+  color: #b88e2f;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: 1s all ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: #b88e2f;
+    color: #fff;
   }
-  
-  .product-image {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 15px;
+}
+
+.btnDelte {
+  padding: 10px 30px;
+  text-align: center;
+
+  background-color: #d83333;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: 1s all ease-in;
+  outline: none;
+  border: none;
+}
+
+@media screen and (max-width: 900px) {
+  .cart {
+    flex-wrap: wrap !important;
   }
-  
-  .product-details {
-    flex: 1;
+}
+
+@media screen and (max-width: 450px) {
+  .buyRouter {
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 30px;
   }
-  
-  .product-details h4 {
-    margin: 0 0 5px;
+  .buyRouter button {
+    display: block;
+    width: 90%;
   }
-  
-  .product-details p {
-    margin: 2px 0;
-    color: #555;
-  }
-  
-  .product-actions {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .btn-add, .btn-remove {
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 5px;
-    text-align: center;
-  }
-  
-  .btn-remove {
-    background-color: #ff4d4d;
-  }
-  
-  .btn-clear, .btn-continue {
-    background-color: #f0ad4e;
-    color: white;
-    padding: 8px 15px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-clear {
-    margin-right: 10px;
-  }
-  
+}

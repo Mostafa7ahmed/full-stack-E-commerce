@@ -38,6 +38,7 @@ export class AuthService {
     if (encode != null) {
       const decoded:any = jwtDecode(encode);
       this.userInfo.next(decoded)
+      
 
     }
       

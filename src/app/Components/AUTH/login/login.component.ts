@@ -46,6 +46,9 @@ export class LoginComponent {
         this.isloading=false;
         this._ToastService.showToast("success", "تم التسجيل الدخول بنجاح");
         localStorage.setItem("userToken", res.token);
+        localStorage.setItem("userData", JSON.stringify(res.user));
+
+        
         this.authService.DecodeUser();
         this._Router.navigate(['/home']);
       } 

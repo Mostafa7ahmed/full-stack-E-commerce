@@ -1,40 +1,91 @@
+<app-banner [backgroundImage]="bannerImage" [TitlePage]="titlePage"></app-banner>
+
 <div *ngIf="cartItems.length; else emptyCart">
-    <h2>عربة التسوق</h2>
-    <div *ngFor="let item of cartItems" class="cart-item">
-      <!-- Product Image -->
-      <img [src]="item.Image" alt="{{ item.name }}" class="product-image m-3">
-  
-      <!-- Product Details -->
-      <div class="product-details">
-        <h4>{{ item.name }}</h4>
-        <p>السعر: {{ item.price }} $</p>
-        <p>الكمية: {{ item.quantity }}</p>
+  <div
+    class="cart d-flex align-content-center justify-content-between p-5 gap-3 "
+  >
+    <div class="scrollTable">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">المنتج</th>
+            <th scope="col">السعر</th>
+            <th scope="col">الكمية</th>
+            <th scope="col">الاجمالي الفرعي</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td>
+              <div class="produtImage">
+                <img
+                  [src]="item.Image"
+                  alt="{{ item.name }}"
+                  class="product-image"
+                />
+              </div>
+            </td>
+            <td>
+              <h4>{{ item.price | dollarToRiyal }}</h4>
+            </td>
+            <td>
+              <button class="btns" (click)="addSameProduct(item.id)">
+                <i class="fas fa-plus"></i>
+              </button>
+
+              <h5 class="d-inline mx-4">{{ item.quantity }}</h5>
+
+              <button class="btns" (click)="removeSameProduct(item.id)">
+                <i class="fas fa-minus"></i>
+              </button>
+            </td>
+            <td>
+              <h5>{{ item.price * item.quantity | dollarToRiyal }}</h5>
+            </td>
+            <td>
+              <button class="btns" (click)="removeItem(item.id)">
+                <i class="bi bi-trash3-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="buy d-flex align-content-center justify-content-center flex-column"
+    >
+      <h3 class="fw-bolder mt-3 text-center h4">اجمالي سلة التسوق</h3>
+
+      <div class="total d-flex align-items-center justify-content-around my-5">
+        <h3 class="fw-bold text-center h5">اجمالي الكلي</h3>
+
+        <span class="fw-bold px-4 py-2 bg-white rounded-3">{{
+          totalPrice | dollarToRiyal
+        }}</span>
       </div>
-  
-      <!-- Buttons to Add More and Remove Item -->
-      <div class="product-actions">
-        <button (click)="addSameProduct(item.id)" class="btn-add">أضف المزيد</button>
-        <button (click)="removeItem(item.id)" class="btn-remove">إزالة</button>
-        <button (click)="removeSameProduct(item.id)" class="btn-add">أضف المزيد</button>
+
+      <div class="buyRouter d-flex gap-2 flex-row align-items-center justify-content-center  ">
+
+
+
+        <button routerLink="routePath"  (click)="continueShopping()" class="buyBtn"> ادفع</button>
+
+        <button routerLink="routePath"  (click)="clearCart()" class="btnDelte">  إفراغ السلة </button>
 
       </div>
     </div>
-  
-    <!-- Total Price Section -->
-    <h3>المجموع الكلي: {{ totalPrice }} $</h3>
-  
-    <!-- Buttons for clearing cart and continuing shopping -->
-    <button (click)="clearCart()" class="btn-clear">إفراغ السلة</button>
-    <button (click)="continueShopping()" class="btn-continue">مواصلة التسوق</button>
+
+    
   </div>
-  
-  <ng-template #emptyCart>
 
-     <div class="cart d-flex align-content-center  justify-content-center my-4 ">
-       <img src="../../../assets/Image/cartempety.png" alt="">
+</div>
 
-     </div>
-     <h3 class="text-center mt-5 fw-bolder">لا يوجد مشتريات</h3>
+<ng-template #emptyCart>
+  <div class="cart d-flex align-content-center justify-content-center my-4">
+    <img src="../../../assets/Image/cartempety.png" alt="" />
+  </div>
+  <h3 class="text-center mt-5 fw-bolder">لا يوجد مشتريات</h3>
+</ng-template>
 
-  </ng-template>
-  
+
