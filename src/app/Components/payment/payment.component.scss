@@ -1,0 +1,107 @@
+.payment h3 {
+  color: #b88e2f;
+  font-weight: Tajawal;
+  font-size: 20px;
+  font-weight: 700;
+}
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none;
+  border: 1px solid #b88e2f;
+}
+textarea {
+  resize: none;
+  padding: 10px 15px !important;
+}
+.imagePosition {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+.VisaInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #b88e2f;
+  border-radius: 10px;
+}
+.VisaInput input {
+  border: none;
+  width: 80% !important;
+  border-radius: 10px;
+}
+
+form .btns {
+  width: 75%;
+  margin: 25px 0;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #b88e2f;
+  font-weight: 600;
+  color: #fff;
+}
+
+form .btns:hover {
+  background-color: #f7b928;
+  color: #fff;
+}
+form .btnSign {
+  background-color: transparent;
+  border: 2px solid #b88e2f;
+  color: #b88e2f;
+  width: 75%;
+  margin: 25px 0;
+  padding: 15px;
+  outline: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .paymetnForm {
+    flex-wrap: wrap !important;
+    align-items: center;
+
+    justify-content: center !important;
+
+    flex-direction: column-reverse;
+  }
+  .paymetnForm .imagePayment{
+    width: 500px; 
+    
+  }
+  form {
+    width: 100% !important;
+  }
+ 
+  .paymetnForm,
+  form div {
+    width: 90% !important;
+  }
+  form .btns,
+  form .btnSign {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .payment {
+    padding: 20px !important;
+  }
+  .paymetnForm .imagePayment{
+    width: 300px; 
+    
+  }
+  .paymetnForm,
+  form div {
+    width: 100% !important;
+  }
+
+ form .btns,
+  form .btnSign {
+    width: 100% !important;
+  }
+}

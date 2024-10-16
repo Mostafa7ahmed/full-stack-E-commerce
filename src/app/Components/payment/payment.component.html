@@ -1,1 +1,44 @@
 <app-banner [backgroundImage]="bannerImage" [TitlePage]="titlePage"></app-banner>
+
+<div class="payment p-5">
+    <h3>بيانات الشحن</h3>
+
+
+    <div class=" d-flex gap-5   my-5">
+        <h3 class="fw-bold  h5">اجمالي الكلي</h3>
+
+        <span class="fw-bold px-4 py-2 bg-white rounded-3">{{
+          totalPrice | dollarToRiyal
+        }}</span>
+      </div>
+    <div class="paymetnForm my-4 d-flex  justify-content-between">
+
+
+        <form class="w-50">
+            <div class="my-3 w-75">
+                <label for="address" class="form-label fw-bold mb-3"> عنوان الشحن</label>
+                <textarea class="form-control p-2 w-100" id="address" placeholder="ادخل العنوان" rows="3"></textarea>
+             </div>
+
+             <div class="mb-5 w-75 ">
+                <label for="address" class="form-label fw-bold mb-3">  طريقة الدفع او السداد</label>
+                 <div class="position-relative  VisaInput">
+                     <img src="../../../assets/Image/visa.png" alt="" class="">
+                    <input type="text" name="" id="" class="form-control p-2 py-3 w-100">
+                 </div>
+
+             </div>
+
+             <h3>50 ر مصاريف اضافية</h3>
+
+             <a  class=" btns d-block text-center fw-bolder"  (click)="clearCart()">اتمام الدفع</a>
+             <a [routerLink]="'/cart'" class="  btnSign  d-block text-center fw-bolder"> العودة الي عربة التسوق  </a>
+
+
+        </form>
+
+        <img src="../../../assets/Image/payment.png" alt="" class="imagePayment" width="50%" >
+
+
+    </div>
+</div>

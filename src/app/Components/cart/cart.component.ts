@@ -42,6 +42,8 @@ export class CartComponent {
 
   calculateTotalPrice(): void {
     this.totalPrice = this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
+
   }
 
   addSameProduct(itemId: number): void {

@@ -20,6 +20,7 @@ const routes: Routes =[
       { path: "contactUS",   title:"Contact US" , loadComponent:()=>import("./Components/contactus/contactus.component").then(c =>c.ContactusComponent) },
       { path: "cart",   title:"Cart" , loadComponent:()=>import("./Components/cart/cart.component").then(c =>c.CartComponent) },
       { path: "payment",   title:"Payment" , loadComponent:()=>import("./Components/payment/payment.component").then(c =>c.PaymentComponent) },
+      { path: "Done",   title:"Payment" , loadComponent:()=>import("./Components/donepayment/donepayment.component").then(c =>c.DonepaymentComponent) },
 
       { path: '**',   title:"Not Found"  ,loadComponent:()=>import("./Components/notfound/notfound.component").then(c =>c.NotfoundComponent)} 
     ]
