@@ -1,6 +1,6 @@
-# Advanced E-Commerce Frontend
+# E-Store E-Commerce Frontend
 
-A scalable and feature-rich e-commerce frontend built using Angular. This application integrates with a backend API to provide a seamless online shopping experience, offering features like product browsing, cart management, user authentication, and more.
+A scalable and feature-rich e-commerce frontend built using ## Angular. This application integrates with a backend API to provide a seamless online shopping experience, offering features like product browsing, cart management, user authentication, and more.
 
 ## ✨ Features
 
