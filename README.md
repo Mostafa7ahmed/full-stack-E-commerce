@@ -23,7 +23,6 @@ A scalable and feature-rich e-commerce frontend built using  Angular. This appli
 
 
 ### Admin Features:
-![Admin Features](./ImageReadme/home.png)
 - **Category & Product Management**: Full CRUD operations for categories, subcategories, and products (through the external API).
 - **Order Management**: Admin interface for viewing and managing customer orders (via external API).
 
@@ -52,6 +51,8 @@ A scalable and feature-rich e-commerce frontend built using  Angular. This appli
 ### Profile Management:
 - **Profile Page**: Users can view and edit their personal information (name, phone, etc.) through a profile page.
 - Data is fetched from the external API and can be updated, ensuring smooth user data management.
+![Admin Features](./ImageReadme/home.png)
+![Admin Features](./ImageReadme/weus.png)
 
 ## 📦 Installation
 1. Clone the repository:
