@@ -15,13 +15,18 @@ export class ViewdataComponent {
 
   userItems: any = {};
   userAddress :any ={}
+  selectedImage:string ="";
   constructor(private _UserService: UserService) { }
 
 
   loaduserItems(): void {
     const userData = localStorage.getItem('userData');
 
+    const storedImage = localStorage.getItem('userImage'); 
+
     this.userItems = userData ? JSON.parse(userData) : {};
+    this.selectedImage = storedImage ? storedImage : '../../../assets/Image/man.png';
+  
   }
 
   getAddress() {

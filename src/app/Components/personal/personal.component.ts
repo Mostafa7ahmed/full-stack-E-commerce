@@ -14,13 +14,12 @@ import { AuthService } from 'src/app/Core/Service/auth.service';
 export class PersonalComponent {
  
   isExpanded = false;
+  constructor(private _AuthService:AuthService,private ToastService:ToastService){}
 
   toggleExpand() {
     this.isExpanded = !this.isExpanded;
   }
-  constructor(private _AuthService:AuthService,
-    private ToastService:ToastService
-  ){}
+
 
 
   callLogOut() {

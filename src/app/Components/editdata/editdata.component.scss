@@ -1,0 +1,48 @@
+.photo {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.add-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.add-icon:hover {
+    background-color: #f0f0f0;
+}
+.form-control{
+    padding: 10px 20px !important;
+}
+.form-control:focus {
+    box-shadow: none !important;
+    outline: none;
+    border: 1px solid #b88e2f;
+}
+
+form .btns {
+    width: 50%;
+    margin: 25px 0;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: #b88e2f;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  form .btns:hover {
+    background-color: #f7b928;
+    color: #fff;
+  }
