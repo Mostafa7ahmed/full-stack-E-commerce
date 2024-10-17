@@ -52,5 +52,5 @@ A scalable and feature-rich e-commerce frontend built using  Angular. This appli
 ## 📦 Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/Mostafa7ahmed/full-stack-E-commerce
+   cd full-stack-E-commerce
