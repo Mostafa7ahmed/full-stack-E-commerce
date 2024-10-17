@@ -14,17 +14,21 @@ A scalable and feature-rich e-commerce frontend built using  Angular. This appli
 - **Product Browsing & Advanced Search**: Explore products by category and subcategory with powerful search, filtering, and sorting options (price, rating, etc.).
 - **Pagination Support**: Paginated product lists for efficient browsing.
 - **Shopping Cart & Wishlist**: Add, update, and remove products from the cart with dynamic cost calculation. Manage your wishlist for favorite items.
+![Technologies Used](./ImageReadme/cart.png)
+
 - **Coupon Support**: Apply discount coupons during checkout.
 - **Order Processing**: Review orders before finalizing and view order summaries.
 - **User Profile Management**: View and edit profile details such as name, phone number, and other personal information.
+![Technologies Used](./ImageReadme/personal.png)
+
 
 ### Admin Features:
 ![Admin Features](./ImageReadme/home.png)
 - **Category & Product Management**: Full CRUD operations for categories, subcategories, and products (through the external API).
 - **Order Management**: Admin interface for viewing and managing customer orders (via external API).
 
+
 ## 🛠️ Technologies Used
-![Technologies Used](./ImageReadme/personal.png)
 - **Angular**: For building a dynamic, single-page application with reactive forms and components.
 - **API Integration**: Seamless connection to an external API for all back-end operations.
 - **JWT Authentication**: For secure user authentication and session handling with the external API.
