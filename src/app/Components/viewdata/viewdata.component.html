@@ -1,0 +1,46 @@
+<h4 class="fw-bold p-4" >نظرة عامة حول الحساب</h4>
+
+<div class=" dataView p-3 d-flex align-content-center justify-content-between gap-5">
+    <div class="data  w-50 rounded-4 p-4 bg-body shadow-sm">
+        <div class="editData d-flex align-items-center justify-content-between">
+            <h4>تفاصيل الحساب</h4>
+            <i class="bi bi-pen"></i>
+        </div>
+        <hr>
+       <div class="dataInfo d-flex align-items-md-center gap-2  p-2 ">
+        <img src="../../../assets/Image/man.png" alt="" width="60px">
+
+        <div class="info">
+           <h4> {{userItems.name}}</h4>
+           <p>{{userItems.email}} </p>
+
+        </div>
+       </div>
+
+       <hr>
+       
+        <a routerLink="/Personal/changedata" class="btns d-block  text-center">تعديل بيانات الحساب</a>
+
+    </div>
+    <div class="data  w-50 rounded-4 p-4 bg-body shadow-sm">
+        <div class="editData d-flex align-items-center justify-content-between">
+            <h4> العنوان الرئيسي </h4>
+            <i class="bi bi-pen"></i>
+        </div>
+        <hr>
+       <div class="dataInfo d-flex align-items-md-center gap-3  p-2 ">
+        <img src="../../../assets/Image/location.png" alt="" width="60px">
+
+        <div class="info ">
+           <h4 class="mb-2"> {{userAddress.name}}</h4>
+           <p> {{userAddress.city}}  _  {{userAddress.details }}  </p>
+
+        </div>
+       </div>
+
+       <hr>
+        <a routerLink="/Personal/address" class="btns d-block  text-center">تعديل  العنوان الرئيسي </a>
+
+    </div>
+
+</div>

@@ -63,7 +63,14 @@ export class AuthService {
   
 
 
-  
+
+  logOut():void {
+    localStorage.removeItem("userToken");
+    this.userInfo.next(null)
+    this._Router.navigate(['/login'])
+
+
+  }
 
   
 

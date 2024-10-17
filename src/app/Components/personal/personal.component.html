@@ -1,0 +1,43 @@
+<div class="personal">
+     <div class="title p-5 mb-5 " style="background: #B88E2F;">
+        <h1 class="text-white fw-bolder text-center">حسابي الشخصي</h1>
+     </div>
+
+
+     <div class="data d-flex gap-4 p-5">
+        <div class="colData d-flex gap-5 flex-column  py-5 px-3 rounded-3  bg-body-tertiary " [class.expanded]="isExpanded" >
+            <i class="fa fa-arrow-circle-left toggle fs-4" aria-hidden="true" (click)="toggleExpand()"></i>
+
+            <a routerLink="me" routerLinkActive="linkactive" class="mt-4">
+                <h5>  <i class="bi bi-person-bounding-box ms-3"></i> حسابي</h5>
+
+            </a>
+        
+
+            <a routerLink="changedata" routerLinkActive="linkactive">
+                <h5>  <i class="bi bi-info-square-fill ms-3"></i> تعديل البيانات</h5>
+
+            </a>
+
+            <a routerLink="changepassword" routerLinkActive="linkactive">
+                <h5>  <i class="bi bi-person-vcard-fill ms-3"></i> تغير كلمه السر </h5>
+
+            </a>
+            <a routerLink="address" routerLinkActive="linkactive">
+                <h5>  <i class="bi bi-geo-alt ms-3"></i>   اضافه عنوان </h5>
+
+            </a>
+            <a  class="text-danger " (click)="callLogOut()">
+                <h5>  <i class="bi bi-box-arrow-right ms-3"></i>    تسجيل الخروج </h5>
+
+            </a>
+        </div>
+
+        <div class="dataView py-4 px-3 bg-body-tertiary flex-grow-1 rounded-3">
+
+            <router-outlet></router-outlet>
+
+
+        </div>
+     </div>
+</div>

@@ -1,0 +1,80 @@
+.colData {
+  width: 60px;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+  position: relative;
+}
+
+.colData a {
+  font-weight: 700 !important;
+  color: #807575;
+  font-size: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.colData a.linkactive {
+  color: #f9c335;
+}
+
+/* Expanded state */
+.colData.expanded {
+  width: 250px;
+}
+
+/* Optional - Change the arrow direction when expanded */
+.toggle {
+  cursor: pointer;
+  transition: transform 0.3s;
+  color: #f9c335;
+}
+
+.expanded .toggle {
+  transform: rotate(180deg);
+}
+.colData a i {
+  font-weight: 700 !important;
+  font-size: 25px;
+}
+.colData i.toggle {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+}
+
+@media (max-width: 900px) {
+  .data {
+    padding: 20px !important;
+  }
+}
+@media (max-width: 600px) {
+
+    .colData i.toggle {
+       display: none;
+      }
+ 
+  }
+
+  @media (max-width: 450px) {
+
+    
+    .data {
+        padding: 5px !important;
+      }
+     
+      .colData a i {
+        font-weight: 600 !important;
+        font-size: 12px;
+      }
+      .colData{ 
+        padding: 20px !important;
+         width: 40px !important;
+        padding-right: 9px !important;
+      }
+
+      
+  }
+
+  
+
+  

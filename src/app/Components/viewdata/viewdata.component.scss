@@ -1,0 +1,52 @@
+.btns {
+  width: 100%;
+  margin: 25px 0 0 0;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #b88e2f;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+}
+.dataView h4 , h4{
+    color: #b88e2f;
+}
+
+@media (max-width: 900px) {
+  .dataView {
+    display: flex;
+    flex-direction: column;
+  }
+  .dataView .data {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .dataInfo{
+    flex-wrap: wrap;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  }
+  
+
+  @media (max-width: 450px) {
+
+    .dataInfo, .dataView{
+
+        padding: 10px !important;
+      }
+
+      .dataView{
+        padding: 0px !important;
+        gap: 10px !important;
+      }
+
+ 
+  }
+  
