@@ -1,3 +1,4 @@
+import { AddressService } from './../../Core/Service/address.service';
 import { UserService } from './../../Core/Service/user.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,7 +17,7 @@ export class ViewdataComponent {
   userItems: any = {};
   userAddress :any ={}
   selectedImage:string ="";
-  constructor(private _UserService: UserService) { }
+  constructor(private _AddressService:AddressService) { }
 
 
   loaduserItems(): void {
@@ -30,14 +31,16 @@ export class ViewdataComponent {
   }
 
   getAddress() {
-    this._UserService.getAddress().subscribe(
+    this._AddressService.getAddress().subscribe(
       {
         next: (res) => {
-          this.userAddress= res.data;
+          this.userAddress= res.data[0];
         }
 
       })
   }
+
+
 
   ngOnInit(): void {
     this.loaduserItems();

@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
   private baseUrl: string = '';
-  private addressesRouter: string = '';
   private updateMeRouter: string = '';
   private changeMyPasswordRouter: string = '';
 
@@ -20,21 +19,11 @@ export class UserService {
     private _HttpClient: HttpClient
   ) {
     this.baseUrl = this._GlobalService.baseUrl;
-    this.addressesRouter = this._GlobalService.addressesRouter;
     this.updateMeRouter = this._GlobalService.updateMeRouter;
     this.changeMyPasswordRouter= this._GlobalService.changeMyPasswordRoute
   }
 
-  getAddress(): Observable<any> {
-    return this._HttpClient.get(
-      `${this.baseUrl}${this.addressesRouter}/67104f75c933049c5d2c84f3`,
-      {
-        headers: {
-          token: `${localStorage.getItem('userToken')}`,
-        },
-      }
-    );
-  }
+  
   updateMe(Data: object): Observable<any> {
     return this._HttpClient.put( `${this.baseUrl}${this.updateMeRouter}`, Data,
       {

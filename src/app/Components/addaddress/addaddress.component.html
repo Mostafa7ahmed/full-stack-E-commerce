@@ -1,1 +1,88 @@
-<p>addaddress works!</p>
+<div class="Infoaddress">
+    <div class="addadress my-5 d-flex align-items-center justify-content-between">
+        <h4>دليل العناوين</h4>
+        <button class="btns" (click)="togglePopup()">اضافه عنوان</button>
+    </div>
+    <div class="address  w-100 d-flex align-items-sm-center justify-content-between flex-wrap  gap-5">
+        <div class="dataAddress p-3 bg-body rounded-3 shadow-sm mb-2 position-relative"
+            *ngFor="let item of userAddress ; let i = index" style="width: 45%">
+            <h4 *ngIf="i == 0">العنوان الرئيسي </h4>
+            <h4 *ngIf="i !== 0">العنوان الفراعيه </h4>
+
+            <div class="info my-3">
+                <h5 class="fw-bolder text-tertiary my-1">{{item.city}}</h5>
+                <h6 class="fw-bolder my-3"> {{item.details}} & {{item.name}} </h6>
+                <h5 class="fw-medium" style="opacity: .7;">{{item.phone}} </h5>
+
+            </div>
+
+
+            <span class="deleteIcon shadow-sm p-2 bg-danger text-white position-absolute "
+                (click)="deleteAddress(item._id)">
+                <i class="bi bi-x"></i>
+            </span>
+
+
+        </div>
+    </div>
+
+    <!-- Popup -->
+
+
+</div>
+
+
+<div #popup class="popup p-4 bg-body rounded-4 shadow">
+
+    <!-- Close Icon -->
+
+
+
+    <div class="add p-1 d-flex align-content-center justify-content-between">
+        <h4>اضافه عنوان</h4>
+        <div class="close-icon" (click)="togglePopup()">
+            <i class="bi bi-x-circle-fill fs-4"></i>
+        </div>
+    </div>
+    <hr>
+
+    <form class="inputs"  [formGroup]="addAddressForm" (ngSubmit)="addAddress(addAddressForm)" >
+
+
+
+        <div class="mb-3">
+            <label for="city" class="form-label">اضافه اسم الدوله</label>
+            <input type="text" class="form-control" id="city" formControlName="city"  placeholder="ادخل اسم الدوله">
+
+            <div *ngIf="addAddressForm.controls.city?.invalid && addAddressForm.controls.city?.touched" class="text-danger">
+                يجب أن يحتوي اسم الدوله على 3 أحرف على الأقل.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="province" class="form-label">اضافه اسم المحافظه</label>
+            <input type="text" class="form-control" id="province" formControlName="details"   placeholder="ادخل اسم المحافظه">
+            <div *ngIf="addAddressForm.controls.details?.invalid && addAddressForm.controls.details?.touched" class="text-danger">
+                يجب أن يحتوي اسم المحافظه على 3 أحرف على الأقل.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">اضافه اسم البلد</label>
+            <input type="text" class="form-control" id="country" formControlName="name" placeholder="ادخل اسم البلد">
+            <div *ngIf="addAddressForm.controls.name?.invalid && addAddressForm.controls.name?.touched" class="text-danger">
+                يجب أن يحتوي اسم البلد على 3 أحرف على الأقل.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">ادخل رقم الهاتف</label>
+            <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="ادخل رقم الهاتف">
+            <div *ngIf="addAddressForm.controls.phone?.invalid && addAddressForm.controls.phone?.touched" class="text-danger">
+                يجب أن يحتوي رقم الهاتف على 11 رقماً على الأقل.
+            </div>
+        </div>
+        <button [disabled]="isloading || addAddressForm.invalid " class="btns ">
+            <span *ngIf="!isloading">اضافه عنوان</span>
+            <span *ngIf="isloading">جارٍ اضافه عنوان ...</span>
+           </button>
+    </form>
+
+</div>

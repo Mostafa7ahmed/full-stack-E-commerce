@@ -1,0 +1,115 @@
+.dataAddress h4,
+.addadress h4,
+h4 {
+  color: #b88e2f;
+  font-weight: 600;
+  font-size: 20px;
+}
+.deleteIcon {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px !important;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.deleteIcon i {
+  font-weight: 800;
+  font-size: 18px;
+}
+.addadress .btns,
+form .btns {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: #b88e2f;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.popup {
+  width: 35% !important;
+  height: fit-content;
+  position: fixed;
+  bottom: -100%; /* Start off-screen */
+  right: 50%;
+  transform: translate(50%, 0);
+  padding: 20px 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+  opacity: 0; /* Initially hidden */
+}
+
+.popup.show {
+  bottom: 20px; /* Adjust to desired position */
+  opacity: 1; /* Make it visible */
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  cursor: pointer;
+  color: #b88e2f; /* Adjust color as needed */
+}
+
+.close-icon i:hover {
+  color: red;
+}
+.form-control {
+  padding: 10px 20px !important;
+}
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none;
+  border: 1px solid #b88e2f;
+}
+form .btns {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 30px 0 15px 0;
+}
+form .btns:disabled {
+  background-color: #b88e2f;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@media screen and (max-width : 1000px) {
+    .popup{
+        width: 60% !important;
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .popup{
+        width: 80% !important;
+    }
+    .dataAddress{
+        flex-direction: column;
+    }
+    .dataAddress {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .popup{
+        width: 95% !important;
+    }
+   .addadress .btns{
+    padding: 6px 10px ;
+    font-weight: 500;
+    font-size: 15px;
+   }
+}
+
