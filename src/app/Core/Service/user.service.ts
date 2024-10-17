@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GloblaserviceService } from './globlaservice.service';
 import { HttpClient } from '@angular/common/http';
+import { changeMyPassword, updateMe } from '../Interface/user';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +25,7 @@ export class UserService {
   }
 
   
-  updateMe(Data: object): Observable<any> {
+  updateMe(Data: updateMe): Observable<any> {
     return this._HttpClient.put( `${this.baseUrl}${this.updateMeRouter}`, Data,
       {
         headers: {
@@ -34,7 +35,7 @@ export class UserService {
     );
   }
 
-  ChangePass(Data:any) : Observable<any>{
+  ChangePass(Data:changeMyPassword) : Observable<any>{
     return this._HttpClient.put( `${this.baseUrl}${this.changeMyPasswordRouter}`,
        Data,
       {

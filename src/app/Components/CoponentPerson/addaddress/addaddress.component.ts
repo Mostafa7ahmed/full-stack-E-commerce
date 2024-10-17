@@ -4,6 +4,7 @@ import { AddressService } from 'src/app/Core/Service/address.service';
 import { ConfirmService } from 'src/app/Core/Service/confirm.service';
 import Swal from 'sweetalert2';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Address } from 'src/app/Core/Interface/address';
 
 @Component({
   selector: 'app-addaddress',
@@ -14,7 +15,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class AddaddressComponent implements OnInit {
   constructor(private _AddressService: AddressService, private _ConfirmService: ConfirmService) { }
-  userAddress: any[] = [];
+  userAddress: Address[] = [];
   isloading: boolean = false;
 
   addAddressForm = new FormGroup({

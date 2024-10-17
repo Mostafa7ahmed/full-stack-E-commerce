@@ -1,5 +1,5 @@
-import { AddressService } from './../../Core/Service/address.service';
-import { UserService } from './../../Core/Service/user.service';
+import { AddressService } from '../../../Core/Service/address.service';
+import { UserService } from '../../../Core/Service/user.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';

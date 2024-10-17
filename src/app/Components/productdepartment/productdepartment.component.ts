@@ -4,11 +4,13 @@ import { BannerComponent } from '../banner/banner.component';
 import { DepartMentService } from 'src/app/Core/Service/depart-ment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsComponent } from '../products/products.component';
+import { HomeComponent } from "../home/home.component";
+import { LoadCopmComponent } from "../load-copm/load-copm.component";
 
 @Component({
   selector: 'app-productdepartment',
   standalone: true,
-  imports: [CommonModule, BannerComponent, ProductsComponent],
+  imports: [CommonModule, BannerComponent, ProductsComponent, HomeComponent, LoadCopmComponent],
   templateUrl: './productdepartment.component.html',
   styleUrls: ['./productdepartment.component.scss'],
 })

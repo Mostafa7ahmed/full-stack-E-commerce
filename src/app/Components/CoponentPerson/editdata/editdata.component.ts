@@ -1,9 +1,9 @@
-import { ToastService } from './../../Core/Service/toast.service';
-import { UserService } from './../../Core/Service/user.service';
+import { UserService } from './../../../Core/Service/user.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { ToastService } from 'src/app/Core/Service/toast.service';
 
 @Component({
   selector: 'app-editdata',
@@ -20,7 +20,7 @@ export class EditdataComponent implements OnInit {
     name: new FormControl('', [Validators.minLength(2), Validators.maxLength(20)]),
   });
 
-  constructor(private _UserService: UserService, private _ToastService: ToastService , private _Router:Router) {}
+  constructor( private _ToastService: ToastService,private  UserService:UserService , private _Router:Router) {}
 
   ngOnInit(): void {
     this.loaduserItems();
@@ -40,7 +40,7 @@ export class EditdataComponent implements OnInit {
   updateData(formData: FormGroup): void {
     if (formData.valid) {
       this.isloading = true;
-      this._UserService.updateMe(formData.value).subscribe({
+      this.UserService.updateMe(formData.value).subscribe({
         next: (res) => {
           localStorage.setItem('userData', JSON.stringify(res.user));
           this._ToastService.showToast("success", "تم تغير البينات");

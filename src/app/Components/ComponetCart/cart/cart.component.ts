@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { DollarToRiyalPipe } from 'src/app/Core/Pipes/dollar-to-riyal.pipe';
-import { BannerComponent } from "../banner/banner.component";
+import { BannerComponent } from "../../banner/banner.component";
+import { LoadCopmComponent } from "../../load-copm/load-copm.component";
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, DollarToRiyalPipe, BannerComponent],
+  imports: [CommonModule, DollarToRiyalPipe, BannerComponent, LoadCopmComponent],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })

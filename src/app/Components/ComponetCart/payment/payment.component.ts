@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BannerComponent } from "../banner/banner.component";
+import { BannerComponent } from "../../banner/banner.component";
 import { DollarToRiyalPipe } from 'src/app/Core/Pipes/dollar-to-riyal.pipe';
 import { Router, RouterLink } from '@angular/router';
 

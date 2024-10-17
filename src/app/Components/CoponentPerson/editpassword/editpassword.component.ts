@@ -1,5 +1,5 @@
-import { ToastService } from './../../Core/Service/toast.service';
-import { UserService } from './../../Core/Service/user.service';
+import { ToastService } from '../../../Core/Service/toast.service';
+import { UserService } from '../../../Core/Service/user.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule, AbstractControl } from '@angular/forms';

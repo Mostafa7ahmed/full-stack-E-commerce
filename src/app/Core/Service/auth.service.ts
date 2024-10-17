@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { BehaviorSubject, Observable, ObservedValueOf } from 'rxjs';
+import { forgotPasswords, resetCode, resetPassword, signIn, signUp } from '../Interface/user';
 
 @Injectable({
   providedIn: 'root'
@@ -23,12 +24,12 @@ export class AuthService {
   
 
 //  Register
-  Register(user: object):Observable<any>{
+  Register(user: signUp):Observable<any>{
     return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute+"signup",user)
   }
   
   // Signin
-  Signin(user: object):Observable<any>{
+  Signin(user: signIn):Observable<any>{
     return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute +"signin",user)
   }
 
@@ -44,19 +45,19 @@ export class AuthService {
       
   }
   // Forgot Password
-  forgetPassword(forgetPasswordForm:any):Observable<any>{
+  forgetPassword(forgetPasswordForm:forgotPasswords):Observable<any>{
     return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute +'forgotPasswords',forgetPasswordForm);
   }
   
 
 
 
-  verifyRestCode(verifyRestCode: any): Observable<any>{
+  verifyRestCode(verifyRestCode: resetCode): Observable<any>{
     return this._HttpClient.post(this.APiUrl.baseUrl +this.APiUrl.authRoute+'verifyResetCode',verifyRestCode);
 
   }
   
-  resetPassword(resetPassword: any): Observable<any>{
+  resetPassword(resetPassword: resetPassword): Observable<any>{
     return this._HttpClient.put(this.APiUrl.baseUrl + this.APiUrl.authRoute +'resetPassword',resetPassword);
 
   }

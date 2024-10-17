@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GloblaserviceService } from './globlaservice.service';
 import { Injectable } from '@angular/core';
+import { Address } from '../Interface/address';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +27,7 @@ export class AddressService {
     });
   }
 
-  addAddress(address:any): Observable<any> {
+  addAddress(address:Address): Observable<any> {
     return this._HttpClient.post(`${this.baseUrl}${this.addressesRouter}`, address ,{
       headers: {
         token: `${localStorage.getItem('userToken')}`,

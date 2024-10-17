@@ -18,32 +18,32 @@ const routes: Routes = [
       { path: 'department/:name', title: "Prodcut DepartMenet", loadComponent: () => import("./Components/productdepartment/productdepartment.component").then(c => c.ProductdepartmentComponent) },
       { path: "fromUs", title: "From US", loadComponent: () => import("./Components/fromus/fromus.component").then(c => c.FromusComponent) },
       { path: "contactUS", title: "Contact US", loadComponent: () => import("./Components/contactus/contactus.component").then(c => c.ContactusComponent) },
-      { path: "cart", title: "Cart", loadComponent: () => import("./Components/cart/cart.component").then(c => c.CartComponent) },
-      { path: "payment", title: "Payment", loadComponent: () => import("./Components/payment/payment.component").then(c => c.PaymentComponent) },
-      { path: "Done", title: "Payment", loadComponent: () => import("./Components/donepayment/donepayment.component").then(c => c.DonepaymentComponent) },
+      { path: "cart", title: "Cart", loadComponent: () => import("./Components/ComponetCart/cart/cart.component").then(c => c.CartComponent) },
+      { path: "payment", title: "Payment", loadComponent: () => import("./Components/ComponetCart/payment/payment.component").then(c => c.PaymentComponent) },
+      { path: "Done", title: "Payment", loadComponent: () => import("./Components/ComponetCart/donepayment/donepayment.component").then(c => c.DonepaymentComponent) },
       {
         path: "Personal",
         title: "Personal",
-        loadComponent: () => import("./Components/personal/personal.component").then(c => c.PersonalComponent),
+        loadComponent: () => import("./Components/CoponentPerson/personal/personal.component").then(c => c.PersonalComponent),
         children: [
           {
             path: "me",
-            loadComponent: () => import("./Components/viewdata/viewdata.component").then(c => c.ViewdataComponent),
+            loadComponent: () => import("./Components/CoponentPerson/viewdata/viewdata.component").then(c => c.ViewdataComponent),
 
           },
           {
             path: "changedata",
-            loadComponent: () => import("./Components/editdata/editdata.component").then(c => c.EditdataComponent),
+            loadComponent: () => import("./Components/CoponentPerson/editdata/editdata.component").then(c => c.EditdataComponent),
 
           },
           {
             path: "changepassword",
-            loadComponent: () => import("./Components/editpassword/editpassword.component").then(c => c.EditpasswordComponent),
+            loadComponent: () => import("./Components/CoponentPerson/editpassword/editpassword.component").then(c => c.EditpasswordComponent),
 
           },
           {
             path: "address",
-            loadComponent: () => import("./Components/addaddress/addaddress.component").then(c => c.AddaddressComponent),
+            loadComponent: () => import("./Components/CoponentPerson/addaddress/addaddress.component").then(c => c.AddaddressComponent),
 
           },
 
