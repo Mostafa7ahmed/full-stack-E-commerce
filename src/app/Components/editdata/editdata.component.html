@@ -13,9 +13,9 @@
     </div>
     
     <form class="sendData d-flex flex-column" (ngSubmit)="updateData(updateMe)" [formGroup]="updateMe">
-      <div *ngIf="isloading">Loading...</div>
+      <!-- <div *ngIf="isloading">Loading...</div> -->
       <div class="inputsData d-flex gap-5 w-100">
-        <div class="my-5 w-50">
+        <div class="my-5 w-50 formInput">
           <label for="name" class="form-label mb-4">اسم المستخدم</label>
           <input type="text" class="form-control w-100" id="name" formControlName="name" placeholder="ادخل اسم المستخدم">
           <div *ngIf="updateMe.controls.name?.invalid && updateMe.controls.name?.touched" class="text-danger">
@@ -23,13 +23,13 @@
           </div>
         </div>
         
-        <div class="my-5 w-50">
+        <div class="my-5 w-50 formInput">
           <label for="email" class="form-label mb-4">البريد الالكتروني</label>
           <input type="email" class="form-control w-100" [value]="userItems.email" disabled placeholder="ادخل البريد الالكتروني">
         </div>
       </div>
       
-      <div class="d-flex gap-3">
+      <div class="d-flex formBtn gap-3">
         <button [disabled]="isloading || updateMe.invalid" class="btns btnEdit">
           <span *ngIf="!isloading">تعديل البيانات <i class="bi me-3 bi-pencil-square"></i></span>
           <span *ngIf="isloading">جارٍ تعديل المنتج...</span>

@@ -10,6 +10,8 @@ export class UserService {
   private baseUrl: string = '';
   private addressesRouter: string = '';
   private updateMeRouter: string = '';
+  private changeMyPasswordRouter: string = '';
+
 
   userImage: string = '';
   apiKey: string = ``;
@@ -20,6 +22,7 @@ export class UserService {
     this.baseUrl = this._GlobalService.baseUrl;
     this.addressesRouter = this._GlobalService.addressesRouter;
     this.updateMeRouter = this._GlobalService.updateMeRouter;
+    this.changeMyPasswordRouter= this._GlobalService.changeMyPasswordRoute
   }
 
   getAddress(): Observable<any> {
@@ -33,7 +36,18 @@ export class UserService {
     );
   }
   updateMe(Data: object): Observable<any> {
-    return this._HttpClient.put( `${this.baseUrl}/api/v1/users/updateMe`, Data,
+    return this._HttpClient.put( `${this.baseUrl}${this.updateMeRouter}`, Data,
+      {
+        headers: {
+          token: `${localStorage.getItem('userToken')}`,
+        }
+      }
+    );
+  }
+
+  ChangePass(Data:any) : Observable<any>{
+    return this._HttpClient.put( `${this.baseUrl}${this.changeMyPasswordRouter}`,
+       Data,
       {
         headers: {
           token: `${localStorage.getItem('userToken')}`,
