@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced E-Commerce Frontend</title>
-</head>
-<body>
 
   <h1>Advanced E-Commerce Frontend</h1>
   <p>A scalable and feature-rich e-commerce frontend built using Angular. This application integrates with a backend API to provide a seamless online shopping experience, offering features like product browsing, cart management, user authentication, and more.</p>
@@ -99,6 +91,3 @@ cd your-repository
 
   <h2>📝 License</h2>
   <p>This project is licensed under the MIT License. See the <code>LICENSE</code> file for details.</p>
-
-</body>
-</html>
