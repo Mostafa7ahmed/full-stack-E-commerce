@@ -1,27 +1,61 @@
-# Ecommerce
+# Advanced E-Commerce Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+A scalable and feature-rich e-commerce frontend built using Angular. This application integrates with a backend API to provide a seamless online shopping experience, offering features like product browsing, cart management, user authentication, and more.
 
-## Development server
+## ✨ Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### User-Focused Features:
+- **User Authentication & Security**:
+  - Secure registration, login, and password recovery, with JWT-based authentication via external API.
+- **Product Browsing & Advanced Search**:
+  - Explore products by category and subcategory with powerful search, filtering, and sorting options (price, rating, etc.).
+- **Pagination Support**:
+  - Paginated product lists for efficient browsing.
+- **Shopping Cart & Wishlist**:
+  - Add, update, and remove products from the cart with dynamic cost calculation. Manage your wishlist for favorite items.
+- **Coupon Support**:
+  - Apply discount coupons during checkout.
+- **Order Processing**:
+  - Review orders before finalizing and view order summaries.
+- **User Profile Management**:
+  - View and edit profile details such as name, phone number, and other personal information.
 
-## Code scaffolding
+### Admin Features:
+- **Category & Product Management**:
+  - Full CRUD operations for categories, subcategories, and products (through the external API).
+- **Order Management**:
+  - Admin interface for viewing and managing customer orders (via external API).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Technologies Used
+- **Angular**: For building a dynamic, single-page application with reactive forms and components.
+- **API Integration**: Seamless connection to an external API for all back-end operations.
+- **JWT Authentication**: For secure user authentication and session handling with the external API.
+- **TypeScript**: For ensuring type safety and scalable code.
 
-## Build
+## ⚙️ Key Functionalities
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Authentication & Authorization:
+- Secure login and registration using JWT with API integration.
+- Password reset functionality.
 
-## Running unit tests
+### Product & Category Management:
+- Fetch and manage products and categories from the external API.
+- Admin CRUD operations for categories and products.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Shopping Cart & Orders:
+- Dynamic cart management with total price calculations.
+- Apply coupons and track discounts during checkout.
+- Complete order placement and tracking through the external API.
 
-## Running end-to-end tests
+### Profile Management:
+- **Profile Page**: Users can view and edit their personal information (name, phone, etc.) through a profile page.
+- Data is fetched from the external API and can be updated, ensuring smooth user data management.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 📦 Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repository.git
+   cd your-repository
