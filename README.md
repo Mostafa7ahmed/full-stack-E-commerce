@@ -19,12 +19,12 @@ A scalable and feature-rich e-commerce frontend built using  Angular. This appli
 - **User Profile Management**: View and edit profile details such as name, phone number, and other personal information.
 
 ### Admin Features:
-![Admin Features](URL_OF_YOUR_IMAGE)
+![Admin Features](./ImageReadme/home.png)
 - **Category & Product Management**: Full CRUD operations for categories, subcategories, and products (through the external API).
 - **Order Management**: Admin interface for viewing and managing customer orders (via external API).
 
 ## 🛠️ Technologies Used
-![Technologies Used](URL_OF_YOUR_IMAGE)
+![Technologies Used](./ImageReadme/personal.png)
 - **Angular**: For building a dynamic, single-page application with reactive forms and components.
 - **API Integration**: Seamless connection to an external API for all back-end operations.
 - **JWT Authentication**: For secure user authentication and session handling with the external API.
