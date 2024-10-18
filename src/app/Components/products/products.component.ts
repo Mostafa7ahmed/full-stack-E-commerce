@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { Prodcuts } from 'src/app/Core/Interface/prodcuts';
 import { DollarToRiyalPipe } from 'src/app/Core/Pipes/dollar-to-riyal.pipe';
+import { LoadCopmComponent } from "../load-copm/load-copm.component";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule , RouterLink , DollarToRiyalPipe],
+  imports: [CommonModule, RouterLink, DollarToRiyalPipe, LoadCopmComponent],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })

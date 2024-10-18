@@ -1,5 +1,5 @@
     <!-- Products -->
-    <div class="Products my-5 text-center d-flex align-items-center flex-column">
+    <div class="Products my-5 text-center d-flex align-items-center flex-column" *ngIf="Prodcuts.length > 0 ; else emptyCart">
         <div class="product d-flex align-items-center">
             <!-- Skeleton Loader -->
             <div *ngIf="isLoadingProduct  else Products" class="skeleton-container">
@@ -49,6 +49,10 @@
             عرض المزيد
         </a>
     </div>
+
+    <ng-template #emptyCart>
+        <app-load-copm Title="لا يوجد منتجات حاليا" ></app-load-copm>
+    </ng-template>
     <!--End Products -->
 
     
